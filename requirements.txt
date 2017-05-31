@@ -1,7 +1,7 @@
-cameo
-bokeh
 cobra
 lxml
 escher
+tqdm
+matplotlib
 
 
