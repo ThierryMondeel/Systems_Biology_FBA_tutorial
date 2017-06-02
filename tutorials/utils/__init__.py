@@ -1,1 +1,1 @@
-from findBiomarkers import findBiomarkers
+from .findBiomarkers import findBiomarkers
