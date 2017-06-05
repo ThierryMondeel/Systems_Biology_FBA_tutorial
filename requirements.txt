@@ -3,5 +3,6 @@ lxml
 escher
 tqdm
 matplotlib
+scipy
 
 
