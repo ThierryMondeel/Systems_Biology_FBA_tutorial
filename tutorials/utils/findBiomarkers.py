@@ -55,16 +55,16 @@ def findBiomarkers(model,fvaRxns=[],mods=[],mode='',metabolomics=False,method=2,
                 return pd.DataFrame(columns=['ID','Name','Reaction','Prediction',
                                             'WT','Mutant','Score'])
 
-        print('Interpreting mode as {}').format(mode)
+        print('Interpreting mode as {}'.format(mode))
 
 
     # rename and reinterpret the input based on the mode
     if mode == 'IEMgene':
         geneIDs = mods
-        print "Finding affected reactions using gene knockout."
+        print("Finding affected reactions using gene knockout.")
         controlRxns = cobra.manipulation.find_gene_knockout_reactions(model,mods)
         if looseGeneAssociation:
-            print "Finding affected reactions using gene-reaction association."
+            print("Finding affected reactions using gene-reaction association.")
             controlRxns = [rxn for gene in geneIDs for rxn in model.genes.get_by_id(gene).reactions]
 
         if len(controlRxns) == 0:
@@ -77,7 +77,7 @@ def findBiomarkers(model,fvaRxns=[],mods=[],mode='',metabolomics=False,method=2,
         if type(controlRxns[0]) == str:
             controlRxns = [ model.reactions.get_by_id(ID) for ID in controlRxns] # take rxn IDs in, turn into rxn objects
     else:
-        print 'Cannot parse mode %s. Choose from: IEMgene, IEMrxn and drug.' % (mode)
+        print('Cannot parse mode %s. Choose from: IEMgene, IEMrxn and drug.' % (mode))
         return
             
     
@@ -86,10 +86,10 @@ def findBiomarkers(model,fvaRxns=[],mods=[],mode='',metabolomics=False,method=2,
     # set fvaRxns to the list of added sink reactions
     if metabolomics:
         if not(all([met in model.metabolites for met in fvaRxns]) or all([met in [m.id for m in model.metabolites] for met in fvaRxns])):
-            print 'For metabolomics mode the fvaRxns input needs to consist of metabolites or their IDs.'
+            print('For metabolomics mode the fvaRxns input needs to consist of metabolites or their IDs.')
             return
         if fvaRxns == []:
-            print 'For metabolomics prediction fvaRxns needs to contain a list of metabolites to simulate with.'
+            print('For metabolomics prediction fvaRxns needs to contain a list of metabolites to simulate with.')
                 # print('Empty fvaRxns list given: generating a list of sink/exchange reactions for the most highly connected metabolites in the model.')
                 # model,sinks,sink_mets = generateSinkReactions(model,setting='ext')
                 # fvaRxns.extend(sinks)
@@ -109,8 +109,8 @@ def findBiomarkers(model,fvaRxns=[],mods=[],mode='',metabolomics=False,method=2,
 
     # print informative message
     print('Modifications will be performed on the following reactions:')
-    print df
-    print
+    print(df)
+    print()
 
     # print('FVA will be performed on the following reactions:')
     # print fvaRxns
@@ -147,7 +147,7 @@ def findBiomarkers(model,fvaRxns=[],mods=[],mode='',metabolomics=False,method=2,
 
     # sort and cut off the biomarker scores
     if cutoff != 0:
-        print '{} low confidence biomarkers with scores below the cutoff were found'.format(len(biomarkerTable[biomarkerTable.Score < cutoff]),len(biomarkerTable[biomarkerTable.Score == 0]))
+        print('{} low confidence biomarkers with scores below the cutoff were found'.format(len(biomarkerTable[biomarkerTable.Score < cutoff]),len(biomarkerTable[biomarkerTable.Score == 0])))
     biomarkerTable = biomarkerTable.sort_values(by='Score',ascending=False)
     significantBiomarkerTable = biomarkerTable[biomarkerTable.Score >= cutoff]
 
@@ -182,7 +182,7 @@ def generateSinkReactions(M,sink_mets,setting):
             sinks.append(rxn.id)
         else:
             sinks.append(existing_sink)
-            print 'Taking existing sink reaction', existing_sink
+            print('Taking existing sink reaction', existing_sink)
 
     return M, sinks, sink_mets
 
