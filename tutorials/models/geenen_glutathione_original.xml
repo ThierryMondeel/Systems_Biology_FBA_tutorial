@@ -1,0 +1,4849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model id="geenen" name="geenen">
+    <listOfFunctionDefinitions>
+      <functionDefinition id="function4glutathionesynthetase2" name="function4glutathionesynthetase2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> OPA </ci>
+            </bvar>
+            <bvar>
+              <ci> cGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> cglc </ci>
+            </bvar>
+            <bvar>
+              <ci> cgly </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> gluAB </ci>
+            </bvar>
+            <bvar>
+              <ci> kGSOPA </ci>
+            </bvar>
+            <bvar>
+              <ci> kGScGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> kGScglc </ci>
+            </bvar>
+            <bvar>
+              <ci> kGScgly </ci>
+            </bvar>
+            <bvar>
+              <ci> kGSgluAB </ci>
+            </bvar>
+            <bvar>
+              <ci> keqGS2 </ci>
+            </bvar>
+            <bvar>
+              <ci> vGSf1 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vGSf1 </ci>
+                  <ci> cgly </ci>
+                  <ci> gluAB </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> OPA </ci>
+                      <apply>
+                        <times/>
+                        <ci> keqGS2 </ci>
+                        <ci> cgly </ci>
+                        <ci> gluAB </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kGScglc </ci>
+                  <ci> kGScgly </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cgly </ci>
+                      <ci> kGScgly </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> gluAB </ci>
+                      <ci> kGSgluAB </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cglc </ci>
+                      <ci> kGScglc </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cGSH </ci>
+                      <ci> kGScGSH </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> OPA </ci>
+                      <ci> kGSOPA </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4gammaglutamylcyclotransferase" name="function4gammaglutamylcyclotransferase">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> ccys </ci>
+            </bvar>
+            <bvar>
+              <ci> cglc </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCTAoxo </ci>
+            </bvar>
+            <bvar>
+              <ci> kcgctccys </ci>
+            </bvar>
+            <bvar>
+              <ci> kcgctcglc </ci>
+            </bvar>
+            <bvar>
+              <ci> kegGCTA </ci>
+            </bvar>
+            <bvar>
+              <ci> oxo </ci>
+            </bvar>
+            <bvar>
+              <ci> vGCTA </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vGCTA </ci>
+                  <ci> cglc </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> ccys </ci>
+                        <ci> oxo </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> kegGCTA </ci>
+                        <ci> cglc </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kcgctcglc </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> ccys </ci>
+                      <ci> kcgctccys </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cglc </ci>
+                      <ci> kcgctcglc </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> oxo </ci>
+                      <ci> kGCTAoxo </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> ccys </ci>
+                        <ci> oxo </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> kcgctccys </ci>
+                        <ci> kGCTAoxo </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function7" name="function7">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> bGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> bgluAA </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> cysgly </ci>
+            </bvar>
+            <bvar>
+              <ci> kGGTbGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> kGGTbgluAA </ci>
+            </bvar>
+            <bvar>
+              <ci> kGGTcysgly </ci>
+            </bvar>
+            <bvar>
+              <ci> keqGGT </ci>
+            </bvar>
+            <bvar>
+              <ci> vGGT </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vGGT </ci>
+                  <ci> bGSH </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> bgluAA </ci>
+                        <ci> cysgly </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> keqGGT </ci>
+                        <ci> bGSH </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kGGTbGSH </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> bgluAA </ci>
+                      <ci> kGGTbgluAA </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> bGSH </ci>
+                      <ci> kGGTbGSH </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cysgly </ci>
+                      <ci> kGGTcysgly </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> bgluAA </ci>
+                        <ci> cysgly </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> kGGTbgluAA </ci>
+                        <ci> kGGTcysgly </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v21" name="function4v21">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> KmcSHMTcCH2THF </ci>
+            </bvar>
+            <bvar>
+              <ci> KmcSHMTcTHF </ci>
+            </bvar>
+            <bvar>
+              <ci> KmcSHMTcgly </ci>
+            </bvar>
+            <bvar>
+              <ci> KmcSHMTcser </ci>
+            </bvar>
+            <bvar>
+              <ci> VmfcSHMT </ci>
+            </bvar>
+            <bvar>
+              <ci> VmrcSHMT </ci>
+            </bvar>
+            <bvar>
+              <ci> cCH2THF </ci>
+            </bvar>
+            <bvar>
+              <ci> cTHF </ci>
+            </bvar>
+            <bvar>
+              <ci> cgly </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> cser </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <times/>
+                      <ci> VmrcSHMT </ci>
+                      <ci> cCH2THF </ci>
+                      <ci> cgly </ci>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <ci> KmcSHMTcCH2THF </ci>
+                      <ci> KmcSHMTcgly </ci>
+                      <apply>
+                        <plus/>
+                        <cn type="integer"> 1 </cn>
+                        <apply>
+                          <divide/>
+                          <ci> cCH2THF </ci>
+                          <ci> KmcSHMTcCH2THF </ci>
+                        </apply>
+                        <apply>
+                          <divide/>
+                          <ci> cgly </ci>
+                          <ci> KmcSHMTcgly </ci>
+                        </apply>
+                        <apply>
+                          <divide/>
+                          <apply>
+                            <times/>
+                            <ci> cCH2THF </ci>
+                            <ci> cgly </ci>
+                          </apply>
+                          <apply>
+                            <times/>
+                            <ci> KmcSHMTcCH2THF </ci>
+                            <ci> KmcSHMTcgly </ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> cser </ci>
+                    <ci> VmfcSHMT </ci>
+                    <ci> cTHF </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> KmcSHMTcser </ci>
+                    <ci> KmcSHMTcTHF </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <divide/>
+                        <ci> cser </ci>
+                        <ci> KmcSHMTcser </ci>
+                      </apply>
+                      <apply>
+                        <divide/>
+                        <ci> cTHF </ci>
+                        <ci> KmcSHMTcTHF </ci>
+                      </apply>
+                      <apply>
+                        <divide/>
+                        <apply>
+                          <times/>
+                          <ci> cser </ci>
+                          <ci> cTHF </ci>
+                        </apply>
+                        <apply>
+                          <times/>
+                          <ci> KmcSHMTcser </ci>
+                          <ci> KmcSHMTcTHF </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function2" name="function2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> SAH </ci>
+            </bvar>
+            <bvar>
+              <ci> SAM </ci>
+            </bvar>
+            <bvar>
+              <ci> Vmmet </ci>
+            </bvar>
+            <bvar>
+              <ci> c5mTHFSUM </ci>
+            </bvar>
+            <bvar>
+              <ci> cCH2THF </ci>
+            </bvar>
+            <bvar>
+              <ci> cTHF </ci>
+            </bvar>
+            <bvar>
+              <ci> cgly </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kmGNMTSAH </ci>
+            </bvar>
+            <bvar>
+              <ci> kmGNMTcgly </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 4.8 </cn>
+                  <ci> Vmmet </ci>
+                  <ci> cgly </ci>
+                  <ci> SAM </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> kmGNMTcgly </ci>
+                    <ci> cgly </ci>
+                  </apply>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <plus/>
+                        <cn> 0.35 </cn>
+                        <ci> c5mTHFSUM </ci>
+                      </apply>
+                      <ci> cCH2THF </ci>
+                    </apply>
+                    <ci> cTHF </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> SAH </ci>
+                      <ci> kmGNMTSAH </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 63 </cn>
+                    <ci> SAM </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4aminopeptidase" name="function4aminopeptidase">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> bcys </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> cysgly </ci>
+            </bvar>
+            <bvar>
+              <ci> kAPbcys </ci>
+            </bvar>
+            <bvar>
+              <ci> kAPcysgly </ci>
+            </bvar>
+            <bvar>
+              <ci> keqAP </ci>
+            </bvar>
+            <bvar>
+              <ci> vAP </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vAP </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> bcys </ci>
+                      <apply>
+                        <times/>
+                        <ci> keqAP </ci>
+                        <ci> cysgly </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> cysgly </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kAPcysgly </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> bcys </ci>
+                      <ci> kAPbcys </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cysgly </ci>
+                      <ci> kAPcysgly </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4methioninesynthase" name="function4methioninesynthase">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> H2O2 </ci>
+            </bvar>
+            <bvar>
+              <ci> H2O2ss </ci>
+            </bvar>
+            <bvar>
+              <ci> c5mTHFSUM </ci>
+            </bvar>
+            <bvar>
+              <ci> cCH2THF </ci>
+            </bvar>
+            <bvar>
+              <ci> cTHF </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> hcy </ci>
+            </bvar>
+            <bvar>
+              <ci> kiMSH2O2 </ci>
+            </bvar>
+            <bvar>
+              <ci> kmMShcy </ci>
+            </bvar>
+            <bvar>
+              <ci> kmMSmTH4 </ci>
+            </bvar>
+            <bvar>
+              <ci> vmMS </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> H2O2ss </ci>
+                    <ci> kiMSH2O2 </ci>
+                  </apply>
+                  <ci> vmMS </ci>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <minus/>
+                      <ci> c5mTHFSUM </ci>
+                      <ci> cCH2THF </ci>
+                    </apply>
+                    <ci> cTHF </ci>
+                  </apply>
+                  <ci> hcy </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> H2O2 </ci>
+                    <ci> kiMSH2O2 </ci>
+                  </apply>
+                  <ci> kmMShcy </ci>
+                  <ci> kmMSmTH4 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <minus/>
+                        <apply>
+                          <minus/>
+                          <ci> c5mTHFSUM </ci>
+                          <ci> cCH2THF </ci>
+                        </apply>
+                        <ci> cTHF </ci>
+                      </apply>
+                      <ci> kmMSmTH4 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> hcy </ci>
+                      <ci> kmMShcy </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function6" name="function6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> cglut </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kopcglut </ci>
+            </bvar>
+            <bvar>
+              <ci> kopoxo </ci>
+            </bvar>
+            <bvar>
+              <ci> oxo </ci>
+            </bvar>
+            <bvar>
+              <ci> vop </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vop </ci>
+                  <ci> oxo </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kopoxo </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cglut </ci>
+                      <ci> kopcglut </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> oxo </ci>
+                      <ci> kopoxo </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v38" name="function4v38">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> boxo </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> ktrsoxo </ci>
+            </bvar>
+            <bvar>
+              <ci> oxo </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> ktrsoxo </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> boxo </ci>
+                  </apply>
+                  <ci> oxo </ci>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4glutathionesynthetase" name="function4glutathionesynthetase">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> OPA </ci>
+            </bvar>
+            <bvar>
+              <ci> cGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> cglc </ci>
+            </bvar>
+            <bvar>
+              <ci> cgly </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> gluAB </ci>
+            </bvar>
+            <bvar>
+              <ci> kGSOPA </ci>
+            </bvar>
+            <bvar>
+              <ci> kGScGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> kGScglc </ci>
+            </bvar>
+            <bvar>
+              <ci> kGScgly </ci>
+            </bvar>
+            <bvar>
+              <ci> kGSgluAB </ci>
+            </bvar>
+            <bvar>
+              <ci> keqGS1 </ci>
+            </bvar>
+            <bvar>
+              <ci> vGSf1 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vGSf1 </ci>
+                  <ci> cglc </ci>
+                  <ci> cgly </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cGSH </ci>
+                      <apply>
+                        <times/>
+                        <ci> keqGS1 </ci>
+                        <ci> cglc </ci>
+                        <ci> cgly </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kGScglc </ci>
+                  <ci> kGScgly </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cgly </ci>
+                      <ci> kGScgly </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> gluAB </ci>
+                      <ci> kGSgluAB </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cglc </ci>
+                      <ci> kGScglc </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cGSH </ci>
+                      <ci> kGScGSH </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> OPA </ci>
+                      <ci> kGSOPA </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v19" name="function4v19">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> bcys </ci>
+            </bvar>
+            <bvar>
+              <ci> ccys </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kccysin </ci>
+            </bvar>
+            <bvar>
+              <ci> kcysinbcys </ci>
+            </bvar>
+            <bvar>
+              <ci> vmcysin </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> vmcysin </ci>
+                    <ci> bcys </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> kcysinbcys </ci>
+                    <ci> bcys </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kccysin </ci>
+                  <ci> ccys </ci>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4glutamylcysteinesynthetase" name="function4glutamylcysteinesynthetase">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> AB </ci>
+            </bvar>
+            <bvar>
+              <ci> cGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> ccys </ci>
+            </bvar>
+            <bvar>
+              <ci> cglc </ci>
+            </bvar>
+            <bvar>
+              <ci> cglut </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> gluAB </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCLAB </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCLccys </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCLcglc </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCLcglut </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCLgluAB </ci>
+            </bvar>
+            <bvar>
+              <ci> keqGCL </ci>
+            </bvar>
+            <bvar>
+              <ci> kiGCL </ci>
+            </bvar>
+            <bvar>
+              <ci> vGCLf1 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vGCLf1 </ci>
+                  <ci> ccys </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cglc </ci>
+                      <apply>
+                        <times/>
+                        <ci> keqGCL </ci>
+                        <ci> ccys </ci>
+                        <ci> cglut </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> cglut </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kGCLccys </ci>
+                  <ci> kGCLcglut </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> AB </ci>
+                      <ci> kGCLAB </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> ccys </ci>
+                      <ci> kGCLccys </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cglc </ci>
+                      <ci> kGCLcglc </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cglut </ci>
+                      <ci> kGCLcglut </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cGSH </ci>
+                      <ci> kiGCL </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> gluAB </ci>
+                      <ci> kGCLgluAB </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v14" name="function4v14">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> H2O2 </ci>
+            </bvar>
+            <bvar>
+              <ci> H2O2ss </ci>
+            </bvar>
+            <bvar>
+              <ci> cGSSG </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kaGSSGl </ci>
+            </bvar>
+            <bvar>
+              <ci> kmGSSGl </ci>
+            </bvar>
+            <bvar>
+              <ci> vmGSSGl </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> H2O2 </ci>
+                    <ci> kaGSSGl </ci>
+                  </apply>
+                  <ci> vmGSSGl </ci>
+                  <ci> cGSSG </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> H2O2ss </ci>
+                    <ci> kaGSSGl </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> kmGSSGl </ci>
+                    <ci> cGSSG </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function1" name="function1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> KmmethSAH </ci>
+            </bvar>
+            <bvar>
+              <ci> KmmethSAM </ci>
+            </bvar>
+            <bvar>
+              <ci> SAH </ci>
+            </bvar>
+            <bvar>
+              <ci> SAM </ci>
+            </bvar>
+            <bvar>
+              <ci> Vmmeth </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> Vmmeth </ci>
+                  <ci> SAM </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> KmmethSAM </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <divide/>
+                        <ci> SAH </ci>
+                        <ci> KmmethSAH </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> SAM </ci>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v22" name="function4v22">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> KmcMTHFRcCH2THF </ci>
+            </bvar>
+            <bvar>
+              <ci> KmcMTHFRcNADPH </ci>
+            </bvar>
+            <bvar>
+              <ci> SAH </ci>
+            </bvar>
+            <bvar>
+              <ci> SAM </ci>
+            </bvar>
+            <bvar>
+              <ci> VmcMTHFR </ci>
+            </bvar>
+            <bvar>
+              <ci> cCH2THF </ci>
+            </bvar>
+            <bvar>
+              <ci> cNADPH </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <cn> 63.72 </cn>
+                <ci> cCH2THF </ci>
+                <ci> cNADPH </ci>
+                <apply>
+                  <power/>
+                  <apply>
+                    <plus/>
+                    <ci> cCH2THF </ci>
+                    <ci> KmcMTHFRcCH2THF </ci>
+                  </apply>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <power/>
+                  <apply>
+                    <plus/>
+                    <ci> cNADPH </ci>
+                    <ci> KmcMTHFRcNADPH </ci>
+                  </apply>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                  </apply>
+                </apply>
+                <ci> VmcMTHFR </ci>
+                <apply>
+                  <power/>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 10 </cn>
+                    <piecewise>
+                      <piece>
+                        <cn type="integer"> 0 </cn>
+                        <apply>
+                          <lt/>
+                          <ci> SAM </ci>
+                          <ci> SAH </ci>
+                        </apply>
+                      </piece>
+                      <otherwise>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <times/>
+                            <apply>
+                              <minus/>
+                              <cn type="integer"> 1 </cn>
+                            </apply>
+                            <ci> SAH </ci>
+                          </apply>
+                          <ci> SAM </ci>
+                        </apply>
+                      </otherwise>
+                    </piecewise>
+                  </apply>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v18" name="function4v18">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> bglut </ci>
+            </bvar>
+            <bvar>
+              <ci> cglut </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kglutin </ci>
+            </bvar>
+            <bvar>
+              <ci> kmbglut </ci>
+            </bvar>
+            <bvar>
+              <ci> vmglutin </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> bglut </ci>
+                    <ci> vmglutin </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> bglut </ci>
+                    <ci> kmbglut </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kglutin </ci>
+                  <ci> cglut </ci>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v32" name="function4v32">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> OPA </ci>
+            </bvar>
+            <bvar>
+              <ci> bOPA </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> ktrsOPA </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> ktrsOPA </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> bOPA </ci>
+                  </apply>
+                  <ci> OPA </ci>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v15" name="function4v15">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> H2O2 </ci>
+            </bvar>
+            <bvar>
+              <ci> H2O2ss </ci>
+            </bvar>
+            <bvar>
+              <ci> cGSSG </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kaGSSGh </ci>
+            </bvar>
+            <bvar>
+              <ci> kmGSSGh </ci>
+            </bvar>
+            <bvar>
+              <ci> vmGSSGh </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> H2O2 </ci>
+                    <ci> kaGSSGh </ci>
+                  </apply>
+                  <ci> vmGSSGh </ci>
+                  <ci> cGSSG </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> H2O2ss </ci>
+                    <ci> kaGSSGh </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> kmGSSGh </ci>
+                    <ci> cGSSG </ci>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4glutathionereductase" name="function4glutathionereductase">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> cGSSG </ci>
+            </bvar>
+            <bvar>
+              <ci> cNADPH </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kmgrGSSG </ci>
+            </bvar>
+            <bvar>
+              <ci> kmgrNADPH </ci>
+            </bvar>
+            <bvar>
+              <ci> vmgr </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> cNADPH </ci>
+                  <ci> vmgr </ci>
+                  <ci> cGSSG </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kmgrGSSG </ci>
+                  <ci> kmgrNADPH </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cNADPH </ci>
+                      <ci> kmgrNADPH </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cGSSG </ci>
+                      <ci> kmgrGSSG </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> cNADPH </ci>
+                        <ci> cGSSG </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> kmgrGSSG </ci>
+                        <ci> kmgrNADPH </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function12" name="function12">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> cgly </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> cysASG </ci>
+            </bvar>
+            <bvar>
+              <ci> glyASG </ci>
+            </bvar>
+            <bvar>
+              <ci> kAPbcys </ci>
+            </bvar>
+            <bvar>
+              <ci> kAPbgly </ci>
+            </bvar>
+            <bvar>
+              <ci> kAPcysgly </ci>
+            </bvar>
+            <bvar>
+              <ci> keqAP </ci>
+            </bvar>
+            <bvar>
+              <ci> vAP </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vAP </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> cgly </ci>
+                        <ci> cysASG </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> keqAP </ci>
+                        <ci> glyASG </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> glyASG </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kAPcysgly </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cgly </ci>
+                      <ci> kAPbgly </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cysASG </ci>
+                      <ci> kAPbcys </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> cgly </ci>
+                        <ci> cysASG </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> kAPbcys </ci>
+                        <ci> kAPbgly </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> glyASG </ci>
+                      <ci> kAPcysgly </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function10" name="function10">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> ASG </ci>
+            </bvar>
+            <bvar>
+              <ci> VmP450A2 </ci>
+            </bvar>
+            <bvar>
+              <ci> cGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kP450A2ASG </ci>
+            </bvar>
+            <bvar>
+              <ci> kP450A2cGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> kP450A2para </ci>
+            </bvar>
+            <bvar>
+              <ci> para </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> para </ci>
+                  <ci> VmP450A2 </ci>
+                  <ci> cGSH </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kP450A2cGSH </ci>
+                  <ci> kP450A2para </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> para </ci>
+                      <ci> kP450A2para </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> ASG </ci>
+                      <ci> kP450A2ASG </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cGSH </ci>
+                      <ci> kP450A2cGSH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function5" name="function5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> H2O2 </ci>
+            </bvar>
+            <bvar>
+              <ci> H2O2ss </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmcbshcy </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmcbsserine </ci>
+            </bvar>
+            <bvar>
+              <ci> SAH </ci>
+            </bvar>
+            <bvar>
+              <ci> SAM </ci>
+            </bvar>
+            <bvar>
+              <ci> Vmcbs </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> cser </ci>
+            </bvar>
+            <bvar>
+              <ci> hcy </ci>
+            </bvar>
+            <bvar>
+              <ci> kaH2O2 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 1.08551 </cn>
+                  <ci> cser </ci>
+                  <apply>
+                    <plus/>
+                    <ci> H2O2 </ci>
+                    <ci> kaH2O2 </ci>
+                  </apply>
+                  <ci> Vmcbs </ci>
+                  <ci> hcy </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> H2O2ss </ci>
+                    <ci> kaH2O2 </ci>
+                  </apply>
+                  <ci> Kmcbshcy </ci>
+                  <apply>
+                    <plus/>
+                    <ci> cser </ci>
+                    <ci> Kmcbsserine </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> hcy </ci>
+                      <ci> Kmcbshcy </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <cn type="integer"> 900 </cn>
+                      <apply>
+                        <power/>
+                        <apply>
+                          <plus/>
+                          <ci> SAH </ci>
+                          <ci> SAM </ci>
+                        </apply>
+                        <cn type="integer"> 2 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v40" name="function4v40">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> bGSSG </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> vbGSSGexp </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> vbGSSGexp </ci>
+                <ci> bGSSG </ci>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4methionineadenosyltransferaseI" name="function4methionineadenosyltransferaseI">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> SAM </ci>
+            </bvar>
+            <bvar>
+              <ci> cGSSG </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kiMATiGSSG </ci>
+            </bvar>
+            <bvar>
+              <ci> kmMATimet </ci>
+            </bvar>
+            <bvar>
+              <ci> met </ci>
+            </bvar>
+            <bvar>
+              <ci> vmMATi </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 0.4 </cn>
+                  <apply>
+                    <plus/>
+                    <cn> 0.23 </cn>
+                    <apply>
+                      <divide/>
+                      <cn> 0.8 </cn>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <cn> 0.0026 </cn>
+                          <ci> SAM </ci>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn> 66.71 </cn>
+                    <ci> kiMATiGSSG </ci>
+                  </apply>
+                  <ci> vmMATi </ci>
+                  <ci> met </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kmMATimet </ci>
+                  <apply>
+                    <plus/>
+                    <ci> kiMATiGSSG </ci>
+                    <ci> cGSSG </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> met </ci>
+                      <ci> kmMATimet </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function11" name="function11">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> ASG </ci>
+            </bvar>
+            <bvar>
+              <ci> cgluAA </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> glyASG </ci>
+            </bvar>
+            <bvar>
+              <ci> kGGTbGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> kGGTbgluAA </ci>
+            </bvar>
+            <bvar>
+              <ci> kGGTcysgly </ci>
+            </bvar>
+            <bvar>
+              <ci> keqGGT </ci>
+            </bvar>
+            <bvar>
+              <ci> vGGT </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vGGT </ci>
+                  <ci> ASG </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> cgluAA </ci>
+                        <ci> glyASG </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> keqGGT </ci>
+                        <ci> ASG </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kGGTbGSH </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> ASG </ci>
+                      <ci> kGGTbGSH </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cgluAA </ci>
+                      <ci> kGGTbgluAA </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> glyASG </ci>
+                      <ci> kGGTcysgly </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <ci> cgluAA </ci>
+                        <ci> glyASG </ci>
+                      </apply>
+                      <apply>
+                        <times/>
+                        <ci> kGGTbgluAA </ci>
+                        <ci> kGGTcysgly </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4" name="function4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> BET </ci>
+            </bvar>
+            <bvar>
+              <ci> H2O2 </ci>
+            </bvar>
+            <bvar>
+              <ci> H2O2ss </ci>
+            </bvar>
+            <bvar>
+              <ci> KibhmtH2O2 </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmbhmtbet </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmbhmthcy </ci>
+            </bvar>
+            <bvar>
+              <ci> SAH </ci>
+            </bvar>
+            <bvar>
+              <ci> SAM </ci>
+            </bvar>
+            <bvar>
+              <ci> Vmbhmt </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> hcy </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <cn> 1.24041 </cn>
+                  <ci> BET </ci>
+                  <apply>
+                    <plus/>
+                    <ci> H2O2ss </ci>
+                    <ci> KibhmtH2O2 </ci>
+                  </apply>
+                  <ci> Vmbhmt </ci>
+                  <ci> hcy </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <exp/>
+                    <apply>
+                      <times/>
+                      <cn> 0.0021 </cn>
+                      <apply>
+                        <plus/>
+                        <ci> SAH </ci>
+                        <ci> SAM </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> H2O2 </ci>
+                    <ci> KibhmtH2O2 </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> BET </ci>
+                    <ci> Kmbhmtbet </ci>
+                  </apply>
+                  <ci> Kmbhmthcy </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> hcy </ci>
+                      <ci> Kmbhmthcy </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4glutamylcysteinesynthetase2" name="function4glutamylcysteinesynthetase2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> AB </ci>
+            </bvar>
+            <bvar>
+              <ci> cGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> ccys </ci>
+            </bvar>
+            <bvar>
+              <ci> cglc </ci>
+            </bvar>
+            <bvar>
+              <ci> cglut </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> gluAB </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCLAB </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCLccys </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCLcglc </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCLcglut </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCLgluAB </ci>
+            </bvar>
+            <bvar>
+              <ci> keqGCL </ci>
+            </bvar>
+            <bvar>
+              <ci> kiGCL </ci>
+            </bvar>
+            <bvar>
+              <ci> vGCLf1 </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> AB </ci>
+                  <ci> vGCLf1 </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <cn type="integer"> 1 </cn>
+                      <apply>
+                        <times/>
+                        <ci> keqGCL </ci>
+                        <ci> cglut </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> cglut </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kGCLAB </ci>
+                  <ci> kGCLcglut </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> AB </ci>
+                      <ci> kGCLAB </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> ccys </ci>
+                      <ci> kGCLccys </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cglc </ci>
+                      <ci> kGCLcglc </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cglut </ci>
+                      <ci> kGCLcglut </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cGSH </ci>
+                      <ci> kiGCL </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> gluAB </ci>
+                      <ci> kGCLgluAB </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4glutathioneperoxidase" name="function4glutathioneperoxidase">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> H2O2 </ci>
+            </bvar>
+            <bvar>
+              <ci> cGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kmGPXH2O2 </ci>
+            </bvar>
+            <bvar>
+              <ci> kmGPXgsh </ci>
+            </bvar>
+            <bvar>
+              <ci> vmGPX </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> H2O2 </ci>
+                  <ci> vmGPX </ci>
+                  <apply>
+                    <power/>
+                    <ci> cGSH </ci>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> H2O2 </ci>
+                    <apply>
+                      <times/>
+                      <cn type="integer"> 9 </cn>
+                      <ci> kmGPXH2O2 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <apply>
+                      <plus/>
+                      <ci> kmGPXgsh </ci>
+                      <ci> cGSH </ci>
+                    </apply>
+                    <cn type="integer"> 2 </cn>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function8" name="function8">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> cgluAA </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCTAcgluAA </ci>
+            </bvar>
+            <bvar>
+              <ci> kGCTAoxo </ci>
+            </bvar>
+            <bvar>
+              <ci> kegGCTA </ci>
+            </bvar>
+            <bvar>
+              <ci> oxo </ci>
+            </bvar>
+            <bvar>
+              <ci> vGCTA </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vGCTA </ci>
+                  <ci> cgluAA </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> oxo </ci>
+                      <apply>
+                        <times/>
+                        <ci> kegGCTA </ci>
+                        <ci> cgluAA </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kGCTAcgluAA </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cgluAA </ci>
+                      <ci> kGCTAcgluAA </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> oxo </ci>
+                      <ci> kGCTAoxo </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v39" name="function4v39">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> bmet </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kmetincmethionine </ci>
+            </bvar>
+            <bvar>
+              <ci> kmmetinoutmethionine </ci>
+            </bvar>
+            <bvar>
+              <ci> met </ci>
+            </bvar>
+            <bvar>
+              <ci> vmmetin </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> bmet </ci>
+                    <ci> vmmetin </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> bmet </ci>
+                    <ci> kmmetinoutmethionine </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kmetincmethionine </ci>
+                  <ci> met </ci>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function9" name="function9">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> ASG </ci>
+            </bvar>
+            <bvar>
+              <ci> VmP450E1 </ci>
+            </bvar>
+            <bvar>
+              <ci> cGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kP450E1ASG </ci>
+            </bvar>
+            <bvar>
+              <ci> kP450E1cGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> kP450E1para </ci>
+            </bvar>
+            <bvar>
+              <ci> para </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> para </ci>
+                  <ci> VmP450E1 </ci>
+                  <ci> cGSH </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kP450E1cGSH </ci>
+                  <ci> kP450E1para </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> para </ci>
+                      <ci> kP450E1para </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> ASG </ci>
+                      <ci> kP450E1ASG </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cGSH </ci>
+                      <ci> kP450E1cGSH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4cystathionase" name="function4cystathionase">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> cyt </ci>
+            </bvar>
+            <bvar>
+              <ci> kmctglcyt </ci>
+            </bvar>
+            <bvar>
+              <ci> vmctgl </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vmctgl </ci>
+                  <ci> cyt </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kmctglcyt </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cyt </ci>
+                      <ci> kmctglcyt </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v23" name="function4v23">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> vocCH2HF </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <ci> vocCH2HF </ci>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v20" name="function4v20">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> bgly </ci>
+            </bvar>
+            <bvar>
+              <ci> cgly </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kcgly </ci>
+            </bvar>
+            <bvar>
+              <ci> kmbgly </ci>
+            </bvar>
+            <bvar>
+              <ci> vmglyin </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <minus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <times/>
+                    <ci> bgly </ci>
+                    <ci> vmglyin </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> bgly </ci>
+                    <ci> kmbgly </ci>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kcgly </ci>
+                  <ci> cgly </ci>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v41" name="function4v41">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> bcys </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kbcys </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> kbcys </ci>
+                <ci> bcys </ci>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v16" name="function4v16">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> cGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kmgshoutl </ci>
+            </bvar>
+            <bvar>
+              <ci> vmgshoutl </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vmgshoutl </ci>
+                  <apply>
+                    <power/>
+                    <ci> cGSH </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <power/>
+                    <ci> kmgshoutl </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                  <apply>
+                    <power/>
+                    <ci> cGSH </ci>
+                    <cn type="integer"> 3 </cn>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v30" name="function4v30">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> bgluAA </ci>
+            </bvar>
+            <bvar>
+              <ci> cgluAA </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kTRSbgluAA </ci>
+            </bvar>
+            <bvar>
+              <ci> kTRScgluAA </ci>
+            </bvar>
+            <bvar>
+              <ci> keqTRS </ci>
+            </bvar>
+            <bvar>
+              <ci> vTRS </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vTRS </ci>
+                  <ci> bgluAA </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> cgluAA </ci>
+                      <apply>
+                        <times/>
+                        <ci> keqTRS </ci>
+                        <ci> bgluAA </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> kTRSbgluAA </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> bgluAA </ci>
+                      <ci> kTRSbgluAA </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> cgluAA </ci>
+                      <ci> kTRScgluAA </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4methionineadenosyltransferaseIII" name="function4methionineadenosyltransferaseIII">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> SAM </ci>
+            </bvar>
+            <bvar>
+              <ci> cGSSG </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kiMATiiiGSSG </ci>
+            </bvar>
+            <bvar>
+              <ci> kmMATiiiSAM </ci>
+            </bvar>
+            <bvar>
+              <ci> kmMATiiimet </ci>
+            </bvar>
+            <bvar>
+              <ci> met </ci>
+            </bvar>
+            <bvar>
+              <ci> vmMATiii </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <cn> 66.71 </cn>
+                    <ci> kiMATiiiGSSG </ci>
+                  </apply>
+                  <ci> vmMATiii </ci>
+                  <apply>
+                    <power/>
+                    <ci> met </ci>
+                    <cn> 1.21 </cn>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <apply>
+                        <times/>
+                        <cn> 7.2 </cn>
+                        <apply>
+                          <power/>
+                          <ci> SAM </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <plus/>
+                        <ci> kmMATiiiSAM </ci>
+                        <apply>
+                          <power/>
+                          <ci> SAM </ci>
+                          <cn type="integer"> 2 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <times/>
+                  <apply>
+                    <plus/>
+                    <ci> kiMATiiiGSSG </ci>
+                    <ci> cGSSG </ci>
+                  </apply>
+                  <apply>
+                    <plus/>
+                    <ci> kmMATiiimet </ci>
+                    <apply>
+                      <power/>
+                      <ci> met </ci>
+                      <cn> 1.21 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v37" name="function4v37">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> cysASG </ci>
+            </bvar>
+            <bvar>
+              <ci> kcysASG </ci>
+            </bvar>
+            <bvar>
+              <ci> merc </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <times/>
+                <ci> kcysASG </ci>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <minus/>
+                    <ci> merc </ci>
+                  </apply>
+                  <ci> cysASG </ci>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function4v17" name="function4v17">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> cGSH </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> kmgshouth </ci>
+            </bvar>
+            <bvar>
+              <ci> vmgshouth </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> vmgshouth </ci>
+                  <ci> cGSH </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> kmgshouth </ci>
+                  <ci> cGSH </ci>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+      <functionDefinition id="function3" name="function3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> KmahSAH </ci>
+            </bvar>
+            <bvar>
+              <ci> Kmahhcy </ci>
+            </bvar>
+            <bvar>
+              <ci> SAH </ci>
+            </bvar>
+            <bvar>
+              <ci> Vmfah </ci>
+            </bvar>
+            <bvar>
+              <ci> compartment </ci>
+            </bvar>
+            <bvar>
+              <ci> hcy </ci>
+            </bvar>
+            <bvar>
+              <ci> keqmet </ci>
+            </bvar>
+            <apply>
+              <divide/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> Vmfah </ci>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> hcy </ci>
+                      <apply>
+                        <times/>
+                        <ci> keqmet </ci>
+                        <ci> SAH </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> SAH </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> KmahSAH </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <apply>
+                      <divide/>
+                      <ci> hcy </ci>
+                      <ci> Kmahhcy </ci>
+                    </apply>
+                    <apply>
+                      <divide/>
+                      <ci> SAH </ci>
+                      <ci> KmahSAH </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+              <ci> compartment </ci>
+            </apply>
+          </lambda>
+        </math>
+      </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfCompartments>
+      <compartment metaid="metaid_0" sboTerm="SBO:0000410" id="default_compartment" name="default_compartment" spatialDimensions="3" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species metaid="metaid_1" id="ASG" name="ASG" compartment="default_compartment" initialConcentration="5" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_1">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/32639"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_2" id="OPA" name="OPA" compartment="default_compartment" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="metaid_3" id="SAH" name="SAH" compartment="default_compartment" initialConcentration="19.1433" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_3">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/16680"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_4" id="SAM" name="SAM" compartment="default_compartment" initialConcentration="81.1685" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_4">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/15414"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_5" id="bGSH" name="bGSH" compartment="default_compartment" initialConcentration="12.6996" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_5">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/16856"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_6" id="bGSSG" name="bGSSG" compartment="default_compartment" initialConcentration="0.484329" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_6">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/17858"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_7" id="bOPA" name="bOPA" compartment="default_compartment" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species metaid="metaid_8" id="bcys" name="bcys" compartment="default_compartment" initialConcentration="185.504" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_8">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/15356"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_9" id="bgluAA" name="bgluAA" compartment="default_compartment" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="metaid_10" id="boxo" name="boxo" compartment="default_compartment" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species metaid="metaid_11" id="cCH2THF" name="cCH2THF" compartment="default_compartment" initialConcentration="0.673887" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_11">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/20502"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_12" id="cGSH" name="cGSH" compartment="default_compartment" initialConcentration="6590.57" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_12">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/16856"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_13" id="cGSSG" name="cGSSG" compartment="default_compartment" initialConcentration="61.302" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_13">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/17858"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_14" id="cTHF" name="cTHF" compartment="default_compartment" initialConcentration="8.2" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_14">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/20506"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_15" id="ccys" name="ccys" compartment="default_compartment" initialConcentration="194.967" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_15">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/15356"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_16" id="cglc" name="cglc" compartment="default_compartment" initialConcentration="9.80842" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_16">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/17515"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_17" id="cgluAA" name="cgluAA" compartment="default_compartment" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="metaid_18" id="cglut" name="cglut" compartment="default_compartment" initialConcentration="3219.4" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_18">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/14321"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_19" id="cgly" name="cgly" compartment="default_compartment" initialConcentration="902.907" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_19">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/15428"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_20" id="cys" name="cys" compartment="default_compartment" initialConcentration="192" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species metaid="metaid_21" id="cysASG" name="cysASG" compartment="default_compartment" initialConcentration="5" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_21">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/24337"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_22" id="cysgly" name="cysgly" compartment="default_compartment" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_22">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/4047"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_23" id="cyt" name="cyt" compartment="default_compartment" initialConcentration="36.8826" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_23">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/17755"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_24" id="ext" name="ext" compartment="default_compartment" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species metaid="metaid_25" id="gluAB" name="gluAB" compartment="default_compartment" initialConcentration="1" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species metaid="metaid_26" id="glyASG" name="glyASG" compartment="default_compartment" initialConcentration="5" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_26">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/24337"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_27" id="hcy" name="hcy" compartment="default_compartment" initialConcentration="1.12248" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_27">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/17230"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_28" id="met" name="met" compartment="default_compartment" initialConcentration="49.1868" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_28">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/16811"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+      <species metaid="metaid_29" id="oxo" name="oxo" compartment="default_compartment" initialConcentration="10" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_29">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/obo.chebi:CHEBI/16010"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+      </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter metaid="metaid_30" id="AB" name="AB" value="10" constant="false"/>
+      <parameter metaid="metaid_31" id="BET" name="BET" value="50" constant="false"/>
+      <parameter metaid="metaid_32" id="DUMP" name="DUMP" value="20" constant="false"/>
+      <parameter metaid="metaid_33" id="EXTERNAL" name="EXTERNAL" value="0" constant="false"/>
+      <parameter metaid="metaid_34" id="GARP" name="GARP" value="10" constant="false"/>
+      <parameter metaid="metaid_35" id="Gpara" name="Gpara" value="10" constant="false"/>
+      <parameter metaid="metaid_36" id="H2O2" name="H2O2" value="0.01" constant="false"/>
+      <parameter metaid="metaid_37" id="H2O2ss" name="H2O2ss" value="0.01" constant="false"/>
+      <parameter metaid="metaid_38" id="HCHO" name="HCHO" value="500" constant="false"/>
+      <parameter metaid="metaid_39" id="KibhmtH2O2" name="KibhmtH2O2" value="0.01" constant="false"/>
+      <parameter metaid="metaid_40" id="KmahSAH" name="KmahSAH" value="6.5" constant="false"/>
+      <parameter metaid="metaid_41" id="Kmahhcy" name="Kmahhcy" value="150" constant="false"/>
+      <parameter metaid="metaid_42" id="Kmbhmtbet" name="Kmbhmtbet" value="100" constant="false"/>
+      <parameter metaid="metaid_43" id="Kmbhmthcy" name="Kmbhmthcy" value="12" constant="false"/>
+      <parameter metaid="metaid_44" id="KmcARTaic" name="KmcARTaic" value="100" constant="false"/>
+      <parameter metaid="metaid_45" id="KmcARTc10fTHF" name="KmcARTc10fTHF" value="5.9" constant="false"/>
+      <parameter metaid="metaid_46" id="KmcDHFRcDHF" name="KmcDHFRcDHF" value="0.5" constant="false"/>
+      <parameter metaid="metaid_47" id="KmcDHFRcNADPH" name="KmcDHFRcNADPH" value="4" constant="false"/>
+      <parameter metaid="metaid_48" id="KmcFTScHCOOH" name="KmcFTScHCOOH" value="43" constant="false"/>
+      <parameter metaid="metaid_49" id="KmcFTScTHF" name="KmcFTScTHF" value="3" constant="false"/>
+      <parameter metaid="metaid_50" id="KmcMTCHc10fTHF" name="KmcMTCHc10fTHF" value="100" constant="false"/>
+      <parameter metaid="metaid_51" id="KmcMTCHcCHTHF" name="KmcMTCHcCHTHF" value="250" constant="false"/>
+      <parameter metaid="metaid_52" id="KmcMTDcCH2THF" name="KmcMTDcCH2THF" value="2" constant="false"/>
+      <parameter metaid="metaid_53" id="KmcMTDcCHTHF" name="KmcMTDcCHTHF" value="10" constant="false"/>
+      <parameter metaid="metaid_54" id="KmcMTHFRcCH2THF" name="KmcMTHFRcCH2THF" value="50" constant="false"/>
+      <parameter metaid="metaid_55" id="KmcMTHFRcNADPH" name="KmcMTHFRcNADPH" value="16" constant="false"/>
+      <parameter metaid="metaid_56" id="KmcPGTGARP" name="KmcPGTGARP" value="520" constant="false"/>
+      <parameter metaid="metaid_57" id="KmcPGTc10fTHF" name="KmcPGTc10fTHF" value="4.9" constant="false"/>
+      <parameter metaid="metaid_58" id="KmcSHMTcCH2THF" name="KmcSHMTcCH2THF" value="3200" constant="false"/>
+      <parameter metaid="metaid_59" id="KmcSHMTcTHF" name="KmcSHMTcTHF" value="50" constant="false"/>
+      <parameter metaid="metaid_60" id="KmcSHMTcgly" name="KmcSHMTcgly" value="10000" constant="false"/>
+      <parameter metaid="metaid_61" id="KmcSHMTcser" name="KmcSHMTcser" value="600" constant="false"/>
+      <parameter metaid="metaid_62" id="KmcTSDUMP" name="KmcTSDUMP" value="6.3" constant="false"/>
+      <parameter metaid="metaid_63" id="KmcTScCH2THF" name="KmcTScCH2THF" value="14" constant="false"/>
+      <parameter metaid="metaid_64" id="Kmcbshcy" name="Kmcbshcy" value="1000" constant="false"/>
+      <parameter metaid="metaid_65" id="Kmcbsserine" name="Kmcbsserine" value="2000" constant="false"/>
+      <parameter metaid="metaid_66" id="Kmcdoccys" name="Kmcdoccys" value="3100" constant="false"/>
+      <parameter metaid="metaid_67" id="KmmDMGDdmg" name="KmmDMGDdmg" value="50" constant="false"/>
+      <parameter metaid="metaid_68" id="KmmDMGDmTHF" name="KmmDMGDmTHF" value="50" constant="false"/>
+      <parameter metaid="metaid_69" id="KmmFTSm10fTHF" name="KmmFTSm10fTHF" value="22" constant="false"/>
+      <parameter metaid="metaid_70" id="KmmFTSmHCOOH" name="KmmFTSmHCOOH" value="43" constant="false"/>
+      <parameter metaid="metaid_71" id="KmmFTSmTHF" name="KmmFTSmTHF" value="3" constant="false"/>
+      <parameter metaid="metaid_72" id="KmmGDCmTHF" name="KmmGDCmTHF" value="50" constant="false"/>
+      <parameter metaid="metaid_73" id="KmmGDCmgly" name="KmmGDCmgly" value="3400" constant="false"/>
+      <parameter metaid="metaid_74" id="KmmMTCHm10fTHF" name="KmmMTCHm10fTHF" value="100" constant="false"/>
+      <parameter metaid="metaid_75" id="KmmMTCHmCHTHF" name="KmmMTCHmCHTHF" value="250" constant="false"/>
+      <parameter metaid="metaid_76" id="KmmMTDmCH2THF" name="KmmMTDmCH2THF" value="2" constant="false"/>
+      <parameter metaid="metaid_77" id="KmmMTDmCHTHF" name="KmmMTDmCHTHF" value="10" constant="false"/>
+      <parameter metaid="metaid_78" id="KmmSDHmTHF" name="KmmSDHmTHF" value="50" constant="false"/>
+      <parameter metaid="metaid_79" id="KmmSDHsarc" name="KmmSDHsarc" value="320" constant="false"/>
+      <parameter metaid="metaid_80" id="KmmSHMTmCH2THF" name="KmmSHMTmCH2THF" value="3200" constant="false"/>
+      <parameter metaid="metaid_81" id="KmmSHMTmTHF" name="KmmSHMTmTHF" value="50" constant="false"/>
+      <parameter metaid="metaid_82" id="KmmSHMTmgly" name="KmmSHMTmgly" value="10000" constant="false"/>
+      <parameter metaid="metaid_83" id="KmmSHMTmser" name="KmmSHMTmser" value="600" constant="false"/>
+      <parameter metaid="metaid_84" id="KmmethSAH" name="KmmethSAH" value="1.4" constant="false"/>
+      <parameter metaid="metaid_85" id="KmmethSAM" name="KmmethSAM" value="1.4" constant="false"/>
+      <parameter metaid="metaid_86" id="Kmsermser" name="Kmsermser" value="5700" constant="false"/>
+      <parameter metaid="metaid_87" id="OPAext" name="OPAext" value="1" constant="false"/>
+      <parameter metaid="metaid_88" id="Spara" name="Spara" value="10" constant="false"/>
+      <parameter metaid="metaid_89" id="VmP4503A4" name="VmP4503A4" value="27000" constant="false"/>
+      <parameter metaid="metaid_90" id="VmP450A2" name="VmP450A2" value="2098.5" constant="false"/>
+      <parameter metaid="metaid_91" id="VmP450E1" name="VmP450E1" value="2731.5" constant="false"/>
+      <parameter metaid="metaid_92" id="Vmbhmt" name="Vmbhmt" value="2047.00989641" constant="false"/>
+      <parameter metaid="metaid_93" id="VmcART" name="VmcART" value="55000" constant="false"/>
+      <parameter metaid="metaid_94" id="VmcDHFR" name="VmcDHFR" value="2000" constant="false"/>
+      <parameter metaid="metaid_95" id="VmcFTD" name="VmcFTD" value="500" constant="false"/>
+      <parameter metaid="metaid_96" id="VmcFTS" name="VmcFTS" value="3900" constant="false"/>
+      <parameter metaid="metaid_97" id="VmcMTHFR" name="VmcMTHFR" value="3384.86097442" constant="false"/>
+      <parameter metaid="metaid_98" id="VmcPGT" name="VmcPGT" value="24300" constant="false"/>
+      <parameter metaid="metaid_99" id="VmcTS" name="VmcTS" value="5000" constant="false"/>
+      <parameter metaid="metaid_100" id="Vmcbs" name="Vmcbs" value="464266.4558161" constant="false"/>
+      <parameter metaid="metaid_101" id="Vmcdo" name="Vmcdo" value="1327.15" constant="false"/>
+      <parameter metaid="metaid_102" id="Vmfah" name="Vmfah" value="2823.85613706" constant="false"/>
+      <parameter metaid="metaid_103" id="VmfcMTCH" name="VmfcMTCH" value="500000" constant="false"/>
+      <parameter metaid="metaid_104" id="VmfcMTD" name="VmfcMTD" value="80000" constant="false"/>
+      <parameter metaid="metaid_105" id="VmfcSHMT" name="VmfcSHMT" value="5200" constant="false"/>
+      <parameter metaid="metaid_106" id="VmfmFTS" name="VmfmFTS" value="2000" constant="false"/>
+      <parameter metaid="metaid_107" id="VmfmMTCH" name="VmfmMTCH" value="790000" constant="false"/>
+      <parameter metaid="metaid_108" id="VmfmMTD" name="VmfmMTD" value="180000" constant="false"/>
+      <parameter metaid="metaid_109" id="VmfmSHMT" name="VmfmSHMT" value="11440" constant="false"/>
+      <parameter metaid="metaid_110" id="VmmDMGD" name="VmmDMGD" value="15000" constant="false"/>
+      <parameter metaid="metaid_111" id="VmmFTD" name="VmmFTD" value="1050" constant="false"/>
+      <parameter metaid="metaid_112" id="VmmGDC" name="VmmGDC" value="15000" constant="false"/>
+      <parameter metaid="metaid_113" id="VmmSDH" name="VmmSDH" value="15000" constant="false"/>
+      <parameter metaid="metaid_114" id="Vmmet" name="Vmmet" value="571.25490777" constant="false"/>
+      <parameter metaid="metaid_115" id="Vmmeth" name="Vmmeth" value="203.78981903" constant="false"/>
+      <parameter metaid="metaid_116" id="Vmrah" name="Vmrah" value="755" constant="false"/>
+      <parameter metaid="metaid_117" id="VmrcMTCH" name="VmrcMTCH" value="20000" constant="false"/>
+      <parameter metaid="metaid_118" id="VmrcMTD" name="VmrcMTD" value="600000" constant="false"/>
+      <parameter metaid="metaid_119" id="VmrcSHMT" name="VmrcSHMT" value="13200756.263" constant="false"/>
+      <parameter metaid="metaid_120" id="VmrmFTS" name="VmrmFTS" value="6300" constant="false"/>
+      <parameter metaid="metaid_121" id="VmrmMTCH" name="VmrmMTCH" value="20000" constant="false"/>
+      <parameter metaid="metaid_122" id="VmrmMTD" name="VmrmMTD" value="594000" constant="false"/>
+      <parameter metaid="metaid_123" id="VmrmSHMT" name="VmrmSHMT" value="30000000" constant="false"/>
+      <parameter metaid="metaid_124" id="Vmser" name="Vmser" value="10000" constant="false"/>
+      <parameter metaid="metaid_125" id="bglut" name="bglut" value="60" constant="false"/>
+      <parameter metaid="metaid_126" id="bgly" name="bgly" value="1300" constant="false"/>
+      <parameter metaid="metaid_127" id="bmet" name="bmet" value="30" constant="false"/>
+      <parameter metaid="metaid_128" id="bser" name="bser" value="150" constant="false"/>
+      <parameter metaid="metaid_129" id="c5mTHFSUM" name="c5mTHFSUM" value="13.373887" constant="false"/>
+      <parameter metaid="metaid_130" id="cNADPH" name="cNADPH" value="50" constant="false"/>
+      <parameter metaid="metaid_131" id="compartment" name="compartment" value="1" constant="false"/>
+      <parameter metaid="metaid_132" id="cser" name="cser" value="540" constant="false"/>
+      <parameter metaid="metaid_133" id="k0" name="k0" value="0" constant="false"/>
+      <parameter metaid="metaid_134" id="kAPbcys" name="kAPbcys" value="9988.69133327" constant="false"/>
+      <parameter metaid="metaid_135" id="kAPbgly" name="kAPbgly" value="10000" constant="false"/>
+      <parameter metaid="metaid_136" id="kAPcysgly" name="kAPcysgly" value="2500" constant="false"/>
+      <parameter metaid="metaid_137" id="kGCLAB" name="kGCLAB" value="2300" constant="false"/>
+      <parameter metaid="metaid_138" id="kGCLccys" name="kGCLccys" value="100" constant="false"/>
+      <parameter metaid="metaid_139" id="kGCLcglc" name="kGCLcglc" value="300" constant="false"/>
+      <parameter metaid="metaid_140" id="kGCLcglut" name="kGCLcglut" value="1900" constant="false"/>
+      <parameter metaid="metaid_141" id="kGCLgluAB" name="kGCLgluAB" value="10000" constant="false"/>
+      <parameter metaid="metaid_142" id="kGCTAcgluAA" name="kGCTAcgluAA" value="2200" constant="false"/>
+      <parameter metaid="metaid_143" id="kGCTAoxo" name="kGCTAoxo" value="10002.50595974" constant="false"/>
+      <parameter metaid="metaid_144" id="kGGTbGSH" name="kGGTbGSH" value="670" constant="false"/>
+      <parameter metaid="metaid_145" id="kGGTbgluAA" name="kGGTbgluAA" value="979.80173595" constant="false"/>
+      <parameter metaid="metaid_146" id="kGGTcysgly" name="kGGTcysgly" value="1090" constant="false"/>
+      <parameter metaid="metaid_147" id="kGSOPA" name="kGSOPA" value="100" constant="false"/>
+      <parameter metaid="metaid_148" id="kGScGSH" name="kGScGSH" value="30" constant="false"/>
+      <parameter metaid="metaid_149" id="kGScglc" name="kGScglc" value="22" constant="false"/>
+      <parameter metaid="metaid_150" id="kGScgly" name="kGScgly" value="300" constant="false"/>
+      <parameter metaid="metaid_151" id="kGSgluAB" name="kGSgluAB" value="200" constant="false"/>
+      <parameter metaid="metaid_152" id="kGpara" name="kGpara" value="915" constant="false"/>
+      <parameter metaid="metaid_153" id="kOPAOPA" name="kOPAOPA" value="1000" constant="false"/>
+      <parameter metaid="metaid_154" id="kOPAext" name="kOPAext" value="0.034232034" constant="false"/>
+      <parameter metaid="metaid_155" id="kP4503A4para" name="kP4503A4para" value="150" constant="false"/>
+      <parameter metaid="metaid_156" id="kP450A2ASG" name="kP450A2ASG" value="10000" constant="false"/>
+      <parameter metaid="metaid_157" id="kP450A2cGSH" name="kP450A2cGSH" value="270" constant="false"/>
+      <parameter metaid="metaid_158" id="kP450A2para" name="kP450A2para" value="1300" constant="false"/>
+      <parameter metaid="metaid_159" id="kP450E1ASG" name="kP450E1ASG" value="10000" constant="false"/>
+      <parameter metaid="metaid_160" id="kP450E1cGSH" name="kP450E1cGSH" value="270" constant="false"/>
+      <parameter metaid="metaid_161" id="kP450E1para" name="kP450E1para" value="6500" constant="false"/>
+      <parameter metaid="metaid_162" id="kSpara" name="kSpara" value="109" constant="false"/>
+      <parameter metaid="metaid_163" id="kTRSbgluAA" name="kTRSbgluAA" value="1000" constant="false"/>
+      <parameter metaid="metaid_164" id="kTRScgluAA" name="kTRScgluAA" value="1000" constant="false"/>
+      <parameter metaid="metaid_165" id="kaGSSGh" name="kaGSSGh" value="0.01" constant="false"/>
+      <parameter metaid="metaid_166" id="kaGSSGl" name="kaGSSGl" value="0.01" constant="false"/>
+      <parameter metaid="metaid_167" id="kaH2O2" name="kaH2O2" value="0.035" constant="false"/>
+      <parameter metaid="metaid_168" id="kagcl" name="kagcl" value="0.01" constant="false"/>
+      <parameter metaid="metaid_169" id="kbcys" name="kbcys" value="0.5" constant="false"/>
+      <parameter metaid="metaid_170" id="kbser" name="kbser" value="150" constant="false"/>
+      <parameter metaid="metaid_171" id="kccysin" name="kccysin" value="0.398490844" constant="false"/>
+      <parameter metaid="metaid_172" id="kcgctccys" name="kcgctccys" value="2177.76442631" constant="false"/>
+      <parameter metaid="metaid_173" id="kcgctcglc" name="kcgctcglc" value="7.9782874" constant="false"/>
+      <parameter metaid="metaid_174" id="kcgctoxo" name="kcgctoxo" value="0.998749" constant="false"/>
+      <parameter metaid="metaid_175" id="kcgly" name="kcgly" value="0.077440299" constant="false"/>
+      <parameter metaid="metaid_176" id="kcglyext" name="kcglyext" value="10" constant="false"/>
+      <parameter metaid="metaid_177" id="kcysASG" name="kcysASG" value="49.99680845" constant="false"/>
+      <parameter metaid="metaid_178" id="kcysin" name="kcysin" value="70" constant="false"/>
+      <parameter metaid="metaid_179" id="kcysinbcys" name="kcysinbcys" value="2100" constant="false"/>
+      <parameter metaid="metaid_180" id="kegGCTA" name="kegGCTA" value="2.80372589" constant="false"/>
+      <parameter metaid="metaid_181" id="keqAP" name="keqAP" value="98.37646982" constant="false"/>
+      <parameter metaid="metaid_182" id="keqGCL" name="keqGCL" value="0.002364413" constant="false"/>
+      <parameter metaid="metaid_183" id="keqGCL2" name="keqGCL2" value="0.000252884" constant="false"/>
+      <parameter metaid="metaid_184" id="keqGGT" name="keqGGT" value="99915.61352679" constant="false"/>
+      <parameter metaid="metaid_185" id="keqGS1" name="keqGS1" value="0.217779881" constant="false"/>
+      <parameter metaid="metaid_186" id="keqGS2" name="keqGS2" value="0.002203477" constant="false"/>
+      <parameter metaid="metaid_187" id="keqOP" name="keqOP" value="10" constant="false"/>
+      <parameter metaid="metaid_188" id="keqOPA" name="keqOPA" value="100" constant="false"/>
+      <parameter metaid="metaid_189" id="keqTRS" name="keqTRS" value="9999.89898787" constant="false"/>
+      <parameter metaid="metaid_190" id="keqgc" name="keqgc" value="26.8" constant="false"/>
+      <parameter metaid="metaid_191" id="keqgcl" name="keqgcl" value="5597" constant="false"/>
+      <parameter metaid="metaid_192" id="keqgs" name="keqgs" value="5600" constant="false"/>
+      <parameter metaid="metaid_193" id="keqmet" name="keqmet" value="0.0602" constant="false"/>
+      <parameter metaid="metaid_194" id="kfcNE" name="kfcNE" value="0.03" constant="false"/>
+      <parameter metaid="metaid_195" id="kfmNE" name="kfmNE" value="0.03" constant="false"/>
+      <parameter metaid="metaid_196" id="kgccglut" name="kgccglut" value="200000" constant="false"/>
+      <parameter metaid="metaid_197" id="kgclgsh" name="kgclgsh" value="8200" constant="false"/>
+      <parameter metaid="metaid_198" id="kgcoxo" name="kgcoxo" value="90000" constant="false"/>
+      <parameter metaid="metaid_199" id="kglutin" name="kglutin" value="0.001329221" constant="false"/>
+      <parameter metaid="metaid_200" id="kgly" name="kgly" value="5700" constant="false"/>
+      <parameter metaid="metaid_201" id="kglyin" name="kglyin" value="630" constant="false"/>
+      <parameter metaid="metaid_202" id="khcooh" name="khcooh" value="100" constant="false"/>
+      <parameter metaid="metaid_203" id="kiGCL" name="kiGCL" value="8200" constant="false"/>
+      <parameter metaid="metaid_204" id="kiMATiGSSG" name="kiMATiGSSG" value="2140" constant="false"/>
+      <parameter metaid="metaid_205" id="kiMATiiiGSSG" name="kiMATiiiGSSG" value="4030" constant="false"/>
+      <parameter metaid="metaid_206" id="kiMSH2O2" name="kiMSH2O2" value="0.01" constant="false"/>
+      <parameter metaid="metaid_207" id="kmGNMTSAH" name="kmGNMTSAH" value="18" constant="false"/>
+      <parameter metaid="metaid_208" id="kmGNMTcgly" name="kmGNMTcgly" value="130" constant="false"/>
+      <parameter metaid="metaid_209" id="kmGPXH2O2" name="kmGPXH2O2" value="0.01" constant="false"/>
+      <parameter metaid="metaid_210" id="kmGPXgsh" name="kmGPXgsh" value="1330" constant="false"/>
+      <parameter metaid="metaid_211" id="kmGSSGh" name="kmGSSGh" value="1250" constant="false"/>
+      <parameter metaid="metaid_212" id="kmGSSGl" name="kmGSSGl" value="7110" constant="false"/>
+      <parameter metaid="metaid_213" id="kmMATiSAM" name="kmMATiSAM" value="50" constant="false"/>
+      <parameter metaid="metaid_214" id="kmMATiiiSAM" name="kmMATiiiSAM" value="129600" constant="false"/>
+      <parameter metaid="metaid_215" id="kmMATiiimet" name="kmMATiiimet" value="300" constant="false"/>
+      <parameter metaid="metaid_216" id="kmMATimet" name="kmMATimet" value="41" constant="false"/>
+      <parameter metaid="metaid_217" id="kmMShcy" name="kmMShcy" value="1" constant="false"/>
+      <parameter metaid="metaid_218" id="kmMSmTH4" name="kmMSmTH4" value="25" constant="false"/>
+      <parameter metaid="metaid_219" id="kmbglut" name="kmbglut" value="300" constant="false"/>
+      <parameter metaid="metaid_220" id="kmbgly" name="kmbgly" value="150" constant="false"/>
+      <parameter metaid="metaid_221" id="kmcFTDc10fTHF" name="kmcFTDc10fTHF" value="20" constant="false"/>
+      <parameter metaid="metaid_222" id="kmctglcyt" name="kmctglcyt" value="500" constant="false"/>
+      <parameter metaid="metaid_223" id="kmetin" name="kmetin" value="30" constant="false"/>
+      <parameter metaid="metaid_224" id="kmetincmethionine" name="kmetincmethionine" value="1" constant="false"/>
+      <parameter metaid="metaid_225" id="kmgrGSSG" name="kmgrGSSG" value="107" constant="false"/>
+      <parameter metaid="metaid_226" id="kmgrNADPH" name="kmgrNADPH" value="10.4" constant="false"/>
+      <parameter metaid="metaid_227" id="kmgshe" name="kmgshe" value="3300" constant="false"/>
+      <parameter metaid="metaid_228" id="kmgshout" name="kmgshout" value="240" constant="false"/>
+      <parameter metaid="metaid_229" id="kmgshouth" name="kmgshouth" value="150" constant="false"/>
+      <parameter metaid="metaid_230" id="kmgshoutl" name="kmgshoutl" value="3000" constant="false"/>
+      <parameter metaid="metaid_231" id="kmmFTDm10fTHF" name="kmmFTDm10fTHF" value="20" constant="false"/>
+      <parameter metaid="metaid_232" id="kmmetinoutmethionine" name="kmmetinoutmethionine" value="150" constant="false"/>
+      <parameter metaid="metaid_233" id="kopcglut" name="kopcglut" value="1.18024605" constant="false"/>
+      <parameter metaid="metaid_234" id="kopoxo" name="kopoxo" value="5" constant="false"/>
+      <parameter metaid="metaid_235" id="koxoext" name="koxoext" value="342.52555827" constant="false"/>
+      <parameter metaid="metaid_236" id="kpcgsh" name="kpcgsh" value="30" constant="false"/>
+      <parameter metaid="metaid_237" id="krcNE" name="krcNE" value="22" constant="false"/>
+      <parameter metaid="metaid_238" id="krmNE" name="krmNE" value="20" constant="false"/>
+      <parameter metaid="metaid_239" id="krserin" name="krserin" value="1" constant="false"/>
+      <parameter metaid="metaid_240" id="kserin" name="kserin" value="150" constant="false"/>
+      <parameter metaid="metaid_241" id="ktrsOPA" name="ktrsOPA" value="900.92467952" constant="false"/>
+      <parameter metaid="metaid_242" id="ktrsoxo" name="ktrsoxo" value="0.372955056" constant="false"/>
+      <parameter metaid="metaid_243" id="merc" name="merc" value="5" constant="false"/>
+      <parameter metaid="metaid_244" id="oxoext" name="oxoext" value="1" constant="false"/>
+      <parameter metaid="metaid_245" id="para" name="para" value="0" constant="false"/>
+      <parameter metaid="metaid_246" id="vAP" name="vAP" value="145394.44495834" constant="false"/>
+      <parameter metaid="metaid_247" id="vGCLf1" name="vGCLf1" value="36000" constant="false"/>
+      <parameter metaid="metaid_248" id="vGCLf2" name="vGCLf2" value="36000" constant="false"/>
+      <parameter metaid="metaid_249" id="vGCLr1" name="vGCLr1" value="100" constant="false"/>
+      <parameter metaid="metaid_250" id="vGCLr2" name="vGCLr2" value="100" constant="false"/>
+      <parameter metaid="metaid_251" id="vGCTA" name="vGCTA" value="59840.3681762" constant="false"/>
+      <parameter metaid="metaid_252" id="vGGT" name="vGGT" value="8745.3214997" constant="false"/>
+      <parameter metaid="metaid_253" id="vGSf1" name="vGSf1" value="948.15288557" constant="false"/>
+      <parameter metaid="metaid_254" id="vGSf2" name="vGSf2" value="54000" constant="false"/>
+      <parameter metaid="metaid_255" id="vGSr1" name="vGSr1" value="10" constant="false"/>
+      <parameter metaid="metaid_256" id="vGSr2" name="vGSr2" value="10" constant="false"/>
+      <parameter metaid="metaid_257" id="vGpara" name="vGpara" value="41.4" constant="false"/>
+      <parameter metaid="metaid_258" id="vSpara" name="vSpara" value="73.8" constant="false"/>
+      <parameter metaid="metaid_259" id="vTRS" name="vTRS" value="97881.27257024" constant="false"/>
+      <parameter metaid="metaid_260" id="vbGSSGexp" name="vbGSSGexp" value="10.22060474" constant="false"/>
+      <parameter metaid="metaid_261" id="vbcysexp" name="vbcysexp" value="0.823708856" constant="false"/>
+      <parameter metaid="metaid_262" id="vgc" name="vgc" value="0" constant="false"/>
+      <parameter metaid="metaid_263" id="vmGPX" name="vmGPX" value="1923.63569867" constant="false"/>
+      <parameter metaid="metaid_264" id="vmGSSGh" name="vmGSSGh" value="21.51690699" constant="false"/>
+      <parameter metaid="metaid_265" id="vmGSSGl" name="vmGSSGl" value="402.5" constant="false"/>
+      <parameter metaid="metaid_266" id="vmMATi" name="vmMATi" value="596.74134609" constant="false"/>
+      <parameter metaid="metaid_267" id="vmMATiii" name="vmMATiii" value="232.88065282" constant="false"/>
+      <parameter metaid="metaid_268" id="vmMS" name="vmMS" value="309.76805869" constant="false"/>
+      <parameter metaid="metaid_269" id="vmOPA" name="vmOPA" value="0.0001" constant="false"/>
+      <parameter metaid="metaid_270" id="vmctgl" name="vmctgl" value="1435.6231332" constant="false"/>
+      <parameter metaid="metaid_271" id="vmcysin" name="vmcysin" value="1382.04384062" constant="false"/>
+      <parameter metaid="metaid_272" id="vmfgly" name="vmfgly" value="10000" constant="false"/>
+      <parameter metaid="metaid_273" id="vmgcl" name="vmgcl" value="3600" constant="false"/>
+      <parameter metaid="metaid_274" id="vmgct" name="vmgct" value="51000" constant="false"/>
+      <parameter metaid="metaid_275" id="vmglutin" name="vmglutin" value="76.73077358" constant="false"/>
+      <parameter metaid="metaid_276" id="vmglyin" name="vmglyin" value="320.99344813" constant="false"/>
+      <parameter metaid="metaid_277" id="vmgr" name="vmgr" value="154.14039786" constant="false"/>
+      <parameter metaid="metaid_278" id="vmgshe" name="vmgshe" value="304" constant="false"/>
+      <parameter metaid="metaid_279" id="vmgshout" name="vmgshout" value="1000" constant="false"/>
+      <parameter metaid="metaid_280" id="vmgshouth" name="vmgshouth" value="68.56973565" constant="false"/>
+      <parameter metaid="metaid_281" id="vmgshoutl" name="vmgshoutl" value="355.77087812" constant="false"/>
+      <parameter metaid="metaid_282" id="vmmetin" name="vmmetin" value="823.54513031" constant="false"/>
+      <parameter metaid="metaid_283" id="vmrgly" name="vmrgly" value="10000" constant="false"/>
+      <parameter metaid="metaid_284" id="vmserin" name="vmserin" value="2700" constant="false"/>
+      <parameter metaid="metaid_285" id="vocCH2HF" name="vocCH2HF" value="13.52015045" constant="false"/>
+      <parameter metaid="metaid_286" id="vocser" name="vocser" value="516" constant="false"/>
+      <parameter metaid="metaid_287" id="vocysb" name="vocysb" value="70" constant="false"/>
+      <parameter metaid="metaid_288" id="voglub" name="voglub" value="273" constant="false"/>
+      <parameter metaid="metaid_289" id="voglyb" name="voglyb" value="630" constant="false"/>
+      <parameter metaid="metaid_290" id="voglyfolate" name="voglyfolate" value="1817.68" constant="false"/>
+      <parameter metaid="metaid_291" id="vop" name="vop" value="846929.64530381" constant="false"/>
+      <parameter metaid="metaid_292" id="voserin" name="voserin" value="803.174" constant="false"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction metaid="metaid_296" id="v_v1" name="v_v1" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_296">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.5.1.6"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_293" species="met" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_294" species="SAM" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="metaid_295" species="cGSSG"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4methionineadenosyltransferaseI </ci>
+                <ci> SAM </ci>
+                <ci> cGSSG </ci>
+                <ci> compartment </ci>
+                <ci> kiMATiGSSG </ci>
+                <ci> kmMATimet </ci>
+                <ci> met </ci>
+                <ci> vmMATi </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_302" id="v_v10" name="v_v10" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_302">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/6.3.2.2"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_297" species="cglut" stoichiometry="1" constant="true"/>
+          <speciesReference metaid="metaid_298" species="ccys" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_299" species="cglc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="metaid_300" species="cGSH"/>
+          <modifierSpeciesReference metaid="metaid_301" species="gluAB"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4glutamylcysteinesynthetase </ci>
+                <ci> AB </ci>
+                <ci> cGSH </ci>
+                <ci> ccys </ci>
+                <ci> cglc </ci>
+                <ci> cglut </ci>
+                <ci> compartment </ci>
+                <ci> gluAB </ci>
+                <ci> kGCLAB </ci>
+                <ci> kGCLccys </ci>
+                <ci> kGCLcglc </ci>
+                <ci> kGCLcglut </ci>
+                <ci> kGCLgluAB </ci>
+                <ci> keqGCL </ci>
+                <ci> kiGCL </ci>
+                <ci> vGCLf1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_308" id="v_v11" name="v_v11" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_308">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/6.3.2.3"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_303" species="cgly" stoichiometry="1" constant="true"/>
+          <speciesReference metaid="metaid_304" species="cglc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_305" species="cGSH" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="metaid_306" species="gluAB"/>
+          <modifierSpeciesReference metaid="metaid_307" species="OPA"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4glutathionesynthetase </ci>
+                <ci> OPA </ci>
+                <ci> cGSH </ci>
+                <ci> cglc </ci>
+                <ci> cgly </ci>
+                <ci> compartment </ci>
+                <ci> gluAB </ci>
+                <ci> kGSOPA </ci>
+                <ci> kGScGSH </ci>
+                <ci> kGScglc </ci>
+                <ci> kGScgly </ci>
+                <ci> kGSgluAB </ci>
+                <ci> keqGS1 </ci>
+                <ci> vGSf1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_311" id="v_v12" name="v_v12" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_311">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/1.11.1.9"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_309" species="cGSH" stoichiometry="2" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_310" species="cGSSG" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4glutathioneperoxidase </ci>
+                <ci> H2O2 </ci>
+                <ci> cGSH </ci>
+                <ci> compartment </ci>
+                <ci> kmGPXH2O2 </ci>
+                <ci> kmGPXgsh </ci>
+                <ci> vmGPX </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_314" id="v_v13" name="v_v13" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_314">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/1.8.1.7"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_312" species="cGSSG" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_313" species="cGSH" stoichiometry="2" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4glutathionereductase </ci>
+                <ci> cGSSG </ci>
+                <ci> cNADPH </ci>
+                <ci> compartment </ci>
+                <ci> kmgrGSSG </ci>
+                <ci> kmgrNADPH </ci>
+                <ci> vmgr </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_317" id="v_v14" name="v_v14" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_315" species="cGSSG" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_316" species="bGSSG" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v14 </ci>
+                <ci> H2O2 </ci>
+                <ci> H2O2ss </ci>
+                <ci> cGSSG </ci>
+                <ci> compartment </ci>
+                <ci> kaGSSGl </ci>
+                <ci> kmGSSGl </ci>
+                <ci> vmGSSGl </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_320" id="v_v15" name="v_v15" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_318" species="cGSSG" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_319" species="bGSSG" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v15 </ci>
+                <ci> H2O2 </ci>
+                <ci> H2O2ss </ci>
+                <ci> cGSSG </ci>
+                <ci> compartment </ci>
+                <ci> kaGSSGh </ci>
+                <ci> kmGSSGh </ci>
+                <ci> vmGSSGh </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_323" id="v_v16" name="v_v16" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_321" species="cGSH" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_322" species="bGSH" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v16 </ci>
+                <ci> cGSH </ci>
+                <ci> compartment </ci>
+                <ci> kmgshoutl </ci>
+                <ci> vmgshoutl </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_326" id="v_v17" name="v_v17" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_324" species="cGSH" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_325" species="bGSH" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v17 </ci>
+                <ci> cGSH </ci>
+                <ci> compartment </ci>
+                <ci> kmgshouth </ci>
+                <ci> vmgshouth </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_329" id="v_v18" name="v_v18" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_327" species="ext" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_328" species="cglut" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v18 </ci>
+                <ci> bglut </ci>
+                <ci> cglut </ci>
+                <ci> compartment </ci>
+                <ci> kglutin </ci>
+                <ci> kmbglut </ci>
+                <ci> vmglutin </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_332" id="v_v19" name="v_v19" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_330" species="bcys" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_331" species="ccys" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v19 </ci>
+                <ci> bcys </ci>
+                <ci> ccys </ci>
+                <ci> compartment </ci>
+                <ci> kccysin </ci>
+                <ci> kcysinbcys </ci>
+                <ci> vmcysin </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_336" id="v_v2" name="v_v2" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_336">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.5.1.6"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_333" species="met" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_334" species="SAM" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="metaid_335" species="cGSSG"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4methionineadenosyltransferaseIII </ci>
+                <ci> SAM </ci>
+                <ci> cGSSG </ci>
+                <ci> compartment </ci>
+                <ci> kiMATiiiGSSG </ci>
+                <ci> kmMATiiiSAM </ci>
+                <ci> kmMATiiimet </ci>
+                <ci> met </ci>
+                <ci> vmMATiii </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_339" id="v_v20" name="v_v20" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_337" species="ext" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_338" species="cgly" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v20 </ci>
+                <ci> bgly </ci>
+                <ci> cgly </ci>
+                <ci> compartment </ci>
+                <ci> kcgly </ci>
+                <ci> kmbgly </ci>
+                <ci> vmglyin </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_343" id="v_v21" name="v_v21" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_340" species="cTHF" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_341" species="cgly" stoichiometry="1" constant="true"/>
+          <speciesReference metaid="metaid_342" species="cCH2THF" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v21 </ci>
+                <ci> KmcSHMTcCH2THF </ci>
+                <ci> KmcSHMTcTHF </ci>
+                <ci> KmcSHMTcgly </ci>
+                <ci> KmcSHMTcser </ci>
+                <ci> VmfcSHMT </ci>
+                <ci> VmrcSHMT </ci>
+                <ci> cCH2THF </ci>
+                <ci> cTHF </ci>
+                <ci> cgly </ci>
+                <ci> compartment </ci>
+                <ci> cser </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_348" id="v_v22" name="v_v22" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_344" species="cCH2THF" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_345" species="ext" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="metaid_346" species="SAH"/>
+          <modifierSpeciesReference metaid="metaid_347" species="SAM"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v22 </ci>
+                <ci> KmcMTHFRcCH2THF </ci>
+                <ci> KmcMTHFRcNADPH </ci>
+                <ci> SAH </ci>
+                <ci> SAM </ci>
+                <ci> VmcMTHFR </ci>
+                <ci> cCH2THF </ci>
+                <ci> cNADPH </ci>
+                <ci> compartment </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_351" id="v_v23" name="v_v23" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_349" species="cTHF" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_350" species="cCH2THF" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v23 </ci>
+                <ci> compartment </ci>
+                <ci> vocCH2HF </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_355" id="v_v24" name="v_v24" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_355">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.3.2.4"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_352" species="cglc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_353" species="oxo" stoichiometry="1" constant="true"/>
+          <speciesReference metaid="metaid_354" species="ccys" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4gammaglutamylcyclotransferase </ci>
+                <ci> ccys </ci>
+                <ci> cglc </ci>
+                <ci> compartment </ci>
+                <ci> kGCTAoxo </ci>
+                <ci> kcgctccys </ci>
+                <ci> kcgctcglc </ci>
+                <ci> kegGCTA </ci>
+                <ci> oxo </ci>
+                <ci> vGCTA </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_358" id="v_v25" name="v_v25" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_358">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/3.5.2.9"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_356" species="oxo" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_357" species="cglut" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function6 </ci>
+                <ci> cglut </ci>
+                <ci> compartment </ci>
+                <ci> kopcglut </ci>
+                <ci> kopoxo </ci>
+                <ci> oxo </ci>
+                <ci> vop </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_364" id="v_v26" name="v_v26" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_364">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/6.3.2.2"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_359" species="cglut" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_360" species="gluAB" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="metaid_361" species="ccys"/>
+          <modifierSpeciesReference metaid="metaid_362" species="cGSH"/>
+          <modifierSpeciesReference metaid="metaid_363" species="cglc"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4glutamylcysteinesynthetase2 </ci>
+                <ci> AB </ci>
+                <ci> cGSH </ci>
+                <ci> ccys </ci>
+                <ci> cglc </ci>
+                <ci> cglut </ci>
+                <ci> compartment </ci>
+                <ci> gluAB </ci>
+                <ci> kGCLAB </ci>
+                <ci> kGCLccys </ci>
+                <ci> kGCLcglc </ci>
+                <ci> kGCLcglut </ci>
+                <ci> kGCLgluAB </ci>
+                <ci> keqGCL </ci>
+                <ci> kiGCL </ci>
+                <ci> vGCLf1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_370" id="v_v27" name="v_v27" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_370">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/6.3.2.3"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_365" species="gluAB" stoichiometry="1" constant="true"/>
+          <speciesReference metaid="metaid_366" species="cgly" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_367" species="OPA" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="metaid_368" species="cGSH"/>
+          <modifierSpeciesReference metaid="metaid_369" species="cglc"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4glutathionesynthetase2 </ci>
+                <ci> OPA </ci>
+                <ci> cGSH </ci>
+                <ci> cglc </ci>
+                <ci> cgly </ci>
+                <ci> compartment </ci>
+                <ci> gluAB </ci>
+                <ci> kGSOPA </ci>
+                <ci> kGScGSH </ci>
+                <ci> kGScglc </ci>
+                <ci> kGScgly </ci>
+                <ci> kGSgluAB </ci>
+                <ci> keqGS2 </ci>
+                <ci> vGSf1 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_374" id="v_v28" name="v_v28" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_374">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.3.2.2"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_371" species="bGSH" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_372" species="cysgly" stoichiometry="1" constant="true"/>
+          <speciesReference metaid="metaid_373" species="bgluAA" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function7 </ci>
+                <ci> bGSH </ci>
+                <ci> bgluAA </ci>
+                <ci> compartment </ci>
+                <ci> cysgly </ci>
+                <ci> kGGTbGSH </ci>
+                <ci> kGGTbgluAA </ci>
+                <ci> kGGTcysgly </ci>
+                <ci> keqGGT </ci>
+                <ci> vGGT </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_377" id="v_v29" name="v_v29" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_377">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/3.4.11.2"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_375" species="cysgly" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_376" species="bcys" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4aminopeptidase </ci>
+                <ci> bcys </ci>
+                <ci> compartment </ci>
+                <ci> cysgly </ci>
+                <ci> kAPbcys </ci>
+                <ci> kAPcysgly </ci>
+                <ci> keqAP </ci>
+                <ci> vAP </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_380" id="v_v3" name="v_v3" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_380">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.1.1.20"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_378" species="SAM" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_379" species="SAH" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function1 </ci>
+                <ci> KmmethSAH </ci>
+                <ci> KmmethSAM </ci>
+                <ci> SAH </ci>
+                <ci> SAM </ci>
+                <ci> Vmmeth </ci>
+                <ci> compartment </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_383" id="v_v30" name="v_v30" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_381" species="bgluAA" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_382" species="cgluAA" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v30 </ci>
+                <ci> bgluAA </ci>
+                <ci> cgluAA </ci>
+                <ci> compartment </ci>
+                <ci> kTRSbgluAA </ci>
+                <ci> kTRScgluAA </ci>
+                <ci> keqTRS </ci>
+                <ci> vTRS </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_386" id="v_v31" name="v_v31" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_386">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.3.2.4"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_384" species="cgluAA" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_385" species="oxo" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function8 </ci>
+                <ci> cgluAA </ci>
+                <ci> compartment </ci>
+                <ci> kGCTAcgluAA </ci>
+                <ci> kGCTAoxo </ci>
+                <ci> kegGCTA </ci>
+                <ci> oxo </ci>
+                <ci> vGCTA </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_389" id="v_v32" name="v_v32" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_387" species="OPA" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_388" species="bOPA" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v32 </ci>
+                <ci> OPA </ci>
+                <ci> bOPA </ci>
+                <ci> compartment </ci>
+                <ci> ktrsOPA </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_392" id="v_v33" name="v_v33" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_392">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.5.1.18"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_390" species="cGSH" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_391" species="ASG" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function9 </ci>
+                <ci> ASG </ci>
+                <ci> VmP450E1 </ci>
+                <ci> cGSH </ci>
+                <ci> compartment </ci>
+                <ci> kP450E1ASG </ci>
+                <ci> kP450E1cGSH </ci>
+                <ci> kP450E1para </ci>
+                <ci> para </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_395" id="v_v34" name="v_v34" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_395">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.5.1.18"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_393" species="cGSH" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_394" species="ASG" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function10 </ci>
+                <ci> ASG </ci>
+                <ci> VmP450A2 </ci>
+                <ci> cGSH </ci>
+                <ci> compartment </ci>
+                <ci> kP450A2ASG </ci>
+                <ci> kP450A2cGSH </ci>
+                <ci> kP450A2para </ci>
+                <ci> para </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_399" id="v_v35" name="v_v35" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_399">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.3.2.2"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_396" species="ASG" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_397" species="glyASG" stoichiometry="1" constant="true"/>
+          <speciesReference metaid="metaid_398" species="cgluAA" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function11 </ci>
+                <ci> ASG </ci>
+                <ci> cgluAA </ci>
+                <ci> compartment </ci>
+                <ci> glyASG </ci>
+                <ci> kGGTbGSH </ci>
+                <ci> kGGTbgluAA </ci>
+                <ci> kGGTcysgly </ci>
+                <ci> keqGGT </ci>
+                <ci> vGGT </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_403" id="v_v36" name="v_v36" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_403">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.3.1.80"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_400" species="glyASG" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_401" species="cysASG" stoichiometry="1" constant="true"/>
+          <speciesReference metaid="metaid_402" species="cgly" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function12 </ci>
+                <ci> cgly </ci>
+                <ci> compartment </ci>
+                <ci> cysASG </ci>
+                <ci> glyASG </ci>
+                <ci> kAPbcys </ci>
+                <ci> kAPbgly </ci>
+                <ci> kAPcysgly </ci>
+                <ci> keqAP </ci>
+                <ci> vAP </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_406" id="v_v37" name="v_v37" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_404" species="cysASG" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_405" species="ext" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v37 </ci>
+                <ci> compartment </ci>
+                <ci> cysASG </ci>
+                <ci> kcysASG </ci>
+                <ci> merc </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_409" id="v_v38" name="v_v38" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_407" species="oxo" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_408" species="boxo" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v38 </ci>
+                <ci> boxo </ci>
+                <ci> compartment </ci>
+                <ci> ktrsoxo </ci>
+                <ci> oxo </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_412" id="v_v39" name="v_v39" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_410" species="ext" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_411" species="met" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v39 </ci>
+                <ci> bmet </ci>
+                <ci> compartment </ci>
+                <ci> kmetincmethionine </ci>
+                <ci> kmmetinoutmethionine </ci>
+                <ci> met </ci>
+                <ci> vmmetin </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_418" id="v_v4" name="v_v4" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_418">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.1.1.72"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_413" species="SAM" stoichiometry="1" constant="true"/>
+          <speciesReference metaid="metaid_414" species="cgly" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_415" species="SAH" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="metaid_416" species="cCH2THF"/>
+          <modifierSpeciesReference metaid="metaid_417" species="cTHF"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function2 </ci>
+                <ci> SAH </ci>
+                <ci> SAM </ci>
+                <ci> Vmmet </ci>
+                <ci> c5mTHFSUM </ci>
+                <ci> cCH2THF </ci>
+                <ci> cTHF </ci>
+                <ci> cgly </ci>
+                <ci> compartment </ci>
+                <ci> kmGNMTSAH </ci>
+                <ci> kmGNMTcgly </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_421" id="v_v40" name="v_v40" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_419" species="bGSSG" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_420" species="bcys" stoichiometry="2" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v40 </ci>
+                <ci> bGSSG </ci>
+                <ci> compartment </ci>
+                <ci> vbGSSGexp </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_424" id="v_v41" name="v_v41" reversible="true" fast="false">
+        <listOfReactants>
+          <speciesReference metaid="metaid_422" species="bcys" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_423" species="cys" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4v41 </ci>
+                <ci> bcys </ci>
+                <ci> compartment </ci>
+                <ci> kbcys </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_427" id="v_v5" name="v_v5" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_427">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/3.3.1.1"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_425" species="SAH" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_426" species="hcy" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function3 </ci>
+                <ci> KmahSAH </ci>
+                <ci> Kmahhcy </ci>
+                <ci> SAH </ci>
+                <ci> Vmfah </ci>
+                <ci> compartment </ci>
+                <ci> hcy </ci>
+                <ci> keqmet </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_432" id="v_v6" name="v_v6" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_432">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.1.1.5"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_428" species="hcy" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_429" species="met" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="metaid_430" species="SAH"/>
+          <modifierSpeciesReference metaid="metaid_431" species="SAM"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4 </ci>
+                <ci> BET </ci>
+                <ci> H2O2 </ci>
+                <ci> H2O2ss </ci>
+                <ci> KibhmtH2O2 </ci>
+                <ci> Kmbhmtbet </ci>
+                <ci> Kmbhmthcy </ci>
+                <ci> SAH </ci>
+                <ci> SAM </ci>
+                <ci> Vmbhmt </ci>
+                <ci> compartment </ci>
+                <ci> hcy </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_437" id="v_v7" name="v_v7" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_437">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/2.1.1.13"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_433" species="hcy" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_434" species="met" stoichiometry="1" constant="true"/>
+          <speciesReference metaid="metaid_435" species="cTHF" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="metaid_436" species="cCH2THF"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4methioninesynthase </ci>
+                <ci> H2O2 </ci>
+                <ci> H2O2ss </ci>
+                <ci> c5mTHFSUM </ci>
+                <ci> cCH2THF </ci>
+                <ci> cTHF </ci>
+                <ci> compartment </ci>
+                <ci> hcy </ci>
+                <ci> kiMSH2O2 </ci>
+                <ci> kmMShcy </ci>
+                <ci> kmMSmTH4 </ci>
+                <ci> vmMS </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_442" id="v_v8" name="v_v8" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_442">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/4.2.1.22"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_438" species="hcy" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_439" species="cyt" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference metaid="metaid_440" species="SAH"/>
+          <modifierSpeciesReference metaid="metaid_441" species="SAM"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function5 </ci>
+                <ci> H2O2 </ci>
+                <ci> H2O2ss </ci>
+                <ci> Kmcbshcy </ci>
+                <ci> Kmcbsserine </ci>
+                <ci> SAH </ci>
+                <ci> SAM </ci>
+                <ci> Vmcbs </ci>
+                <ci> compartment </ci>
+                <ci> cser </ci>
+                <ci> hcy </ci>
+                <ci> kaH2O2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction metaid="metaid_445" id="v_v9" name="v_v9" reversible="true" fast="false">
+        <annotation>
+          <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" xmlns:bqmodel="http://biomodels.net/model-qualifiers/">
+            <rdf:Description rdf:about="#metaid_445">
+              <bqbiol:is>
+                <rdf:Bag>
+                  <rdf:li rdf:resource="http://identifiers.org/ec-code/4.4.1.1"/>
+                </rdf:Bag>
+              </bqbiol:is>
+            </rdf:Description>
+          </rdf:RDF>
+        </annotation>
+        <listOfReactants>
+          <speciesReference metaid="metaid_443" species="cyt" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference metaid="metaid_444" species="ccys" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> compartment </ci>
+              <apply>
+                <ci> function4cystathionase </ci>
+                <ci> compartment </ci>
+                <ci> cyt </ci>
+                <ci> kmctglcyt </ci>
+                <ci> vmctgl </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
