@@ -1,5 +1,8 @@
 .ipynb_checkpoints/
-.predictions/
+.tutorials/ipynb_checkpoints/
+.tutorials/predictions/
+
+.pyc
 
 # LATEX
 *.aux
