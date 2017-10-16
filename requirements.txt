@@ -1,8 +1,8 @@
-cobra
 lxml
 escher
 tqdm
 matplotlib
 scipy
+cobra
 
 
