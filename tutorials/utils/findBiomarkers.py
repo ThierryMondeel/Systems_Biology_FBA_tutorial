@@ -55,7 +55,7 @@ def findBiomarkers(model,fvaRxns=[],mods=[],mode='',metabolomics=False,method=2,
                 return pd.DataFrame(columns=['ID','Name','Reaction','Prediction',
                                             'WT','Mutant','Score'])
 
-        print('Interpreting mode as {}'.format(mode))
+        print(('Interpreting mode as {}'.format(mode)))
 
 
     # rename and reinterpret the input based on the mode
@@ -68,7 +68,7 @@ def findBiomarkers(model,fvaRxns=[],mods=[],mode='',metabolomics=False,method=2,
             controlRxns = [rxn for gene in geneIDs for rxn in model.genes.get_by_id(gene).reactions]
 
         if len(controlRxns) == 0:
-            print('This gene list: {}, does not affect any reactions.'.format(geneIDs))
+            print(('This gene list: {}, does not affect any reactions.'.format(geneIDs)))
             return pd.DataFrame(columns=['ID','Name','Reaction','Prediction',
                 'WT','Mutant','Score'])
 
@@ -77,10 +77,15 @@ def findBiomarkers(model,fvaRxns=[],mods=[],mode='',metabolomics=False,method=2,
         if type(controlRxns[0]) == str:
             controlRxns = [ model.reactions.get_by_id(ID) for ID in controlRxns] # take rxn IDs in, turn into rxn objects
     else:
-        print('Cannot parse mode %s. Choose from: IEMgene, IEMrxn and drug.' % (mode))
+        print(('Cannot parse mode %s. Choose from: IEMgene, IEMrxn and drug.' % (mode)))
         return
             
-    
+    # turn fvaRxns in to reaction objects
+    if not metabolomics:
+        # in metabolomics mode fvaRxns consist of metabolites
+        if any([type(r)==str for r in fvaRxns]):
+            fvaRxns = [model.reactions.get_by_id(r) for r in fvaRxns]
+
     # Are we performing metabolomics or biomarker prediction? 
     # Check if user gave us metabolites and if so add sink reactions to the model
     # set fvaRxns to the list of added sink reactions
@@ -147,7 +152,7 @@ def findBiomarkers(model,fvaRxns=[],mods=[],mode='',metabolomics=False,method=2,
 
     # sort and cut off the biomarker scores
     if cutoff != 0:
-        print('{} low confidence biomarkers with scores below the cutoff were found'.format(len(biomarkerTable[biomarkerTable.Score < cutoff]),len(biomarkerTable[biomarkerTable.Score == 0])))
+        print(('{} low confidence biomarkers with scores below the cutoff were found'.format(len(biomarkerTable[biomarkerTable.Score < cutoff]),len(biomarkerTable[biomarkerTable.Score == 0]))))
     biomarkerTable = biomarkerTable.sort_values(by='Score',ascending=False)
     significantBiomarkerTable = biomarkerTable[biomarkerTable.Score >= cutoff]
 
@@ -162,12 +167,12 @@ def generateSinkReactions(M,sink_mets,setting):
         ''' Find if an exchange for met exists'''
         for r in M.reactions:
             if len(r.metabolites) == 1 and met in r.metabolites:
-                return True,r.id
+                return True,r
         # if we get here such a reaction was not found
         return False,''  
 
     # make sure sink_mets are metabolite objects
-    if all([type(m) == str or type(m) == unicode for m in sink_mets]):
+    if all([type(m) == str or type(m) == str for m in sink_mets]):
         sink_mets = [M.metabolites.get_by_id(m) for m in sink_mets]
 
     # add sink reactions
@@ -179,10 +184,10 @@ def generateSinkReactions(M,sink_mets,setting):
             M.add_reaction(rxn)
             rxn.add_metabolites({met:-1})
             rxn.upper_bound = 0; rxn.lower_bound = 0 # have to init to zero. Only activate when simulating
-            sinks.append(rxn.id)
+            sinks.append(rxn)
         else:
             sinks.append(existing_sink)
-            print('Taking existing sink reaction', existing_sink)
+            print(('Taking existing sink reaction', existing_sink))
 
     return M, sinks, sink_mets
 
@@ -261,8 +266,8 @@ def calcFluxes(model,controlRxns,fvaRxns,eps,fracOpt,mode,forceFlux,metabolomics
             with model as model: # every time undo the changes to the bounds and skip using copy for speed
 
                 # open the sink for this metabolite
-                model.reactions.get_by_id(rxn).lower_bound = -1000 # no influx
-                model.reactions.get_by_id(rxn).upper_bound = 1000 # possible outflux
+                model.reactions.get_by_id(rxn.id).lower_bound = -999999 # 
+                model.reactions.get_by_id(rxn.id).upper_bound = 999999 # 
 
                 if mode == 'drug':
                     subWTf,submutant = calcFluxes_drug(model,[rxn])
@@ -270,10 +275,10 @@ def calcFluxes(model,controlRxns,fvaRxns,eps,fracOpt,mode,forceFlux,metabolomics
                     subWTf,subWTb,submutant = calcFluxes_IEM(model,[rxn])
 
                 # update the total set
-                WTf.loc[rxn] = subWTf.loc[rxn]
-                mutant.loc[rxn] = submutant.loc[rxn]
+                WTf.loc[rxn.id] = subWTf.loc[rxn.id]
+                mutant.loc[rxn.id] = submutant.loc[rxn.id]
                 if mode != 'drug':
-                    WTb.loc[rxn] = subWTb.loc[rxn]
+                    WTb.loc[rxn.id] = subWTb.loc[rxn.id]
             
     else: # we can run all fvaRxns at once no need to change bounds in the middle
         with model as model:
@@ -298,16 +303,16 @@ def uniteForwBack(WTf,WTb,mutant,fvaRxns,method,mode):
         print('No healthy interval could be calculated')
     elif method == 1 and len(WTf) != 0 and len(WTb) != 0:
         for rxn in fvaRxns: # enlarge interval with WTb if needed
-            if WTb.loc[rxn]["minimum"] < WTf.loc[rxn]["minimum"]:
-                WT.loc[rxn]["minimum"] = WTb.loc[rxn]["minimum"]    
-            if WTb.loc[rxn]["maximum"] > WTf.loc[rxn]["maximum"]:
-                WT.loc[rxn]["maximum"] = WTb.loc[rxn]["maximum"]
+            if WTb.loc[rxn.id]["minimum"] < WTf.loc[rxn.id]["minimum"]:
+                WT.loc[rxn.id]["minimum"] = WTb.loc[rxn.id]["minimum"]    
+            if WTb.loc[rxn.id]["maximum"] > WTf.loc[rxn.id]["maximum"]:
+                WT.loc[rxn.id]["maximum"] = WTb.loc[rxn.id]["maximum"]
     elif method == 2 and len(WTf) != 0 and len(WTb) != 0:
-        for rxn in fvaRxns: # enlarge interval with WTb if needed
-            if WTf.loc[rxn]["minimum"] == WTf.loc[rxn]["maximum"] == 0:
-                WT.loc[rxn] = WTb.loc[rxn]
+        for rxn in fvaRxns: # enlarge interval with WTb if needed   
+            if WTf.loc[rxn.id]["minimum"] == WTf.loc[rxn.id]["maximum"] == 0:
+                WT.loc[rxn.id] = WTb.loc[rxn.id]
             else:
-                WT.loc[rxn] = WTf.loc[rxn]
+                WT.loc[rxn.id] = WTf.loc[rxn.id]
     else:
         print('Something weird is going on!')
         return
@@ -318,8 +323,8 @@ def uniteForwBack(WTf,WTb,mutant,fvaRxns,method,mode):
 
     if len(WT) != 0 and len(mutant) != 0:
         for r in fvaRxns:
-            WTint[r] = [ round(WT.loc[r]["minimum"],3), round(WT.loc[r]["maximum"],3) ]
-            mutantint[r] = [ round(mutant.loc[r]["minimum"],3), round(mutant.loc[r]["maximum"],3) ]
+            WTint[r.id] = [ round(WT.loc[r.id]["minimum"],3), round(WT.loc[r.id]["maximum"],3) ]
+            mutantint[r.id] = [ round(mutant.loc[r.id]["minimum"],3), round(mutant.loc[r.id]["maximum"],3) ]
 
     return WTint, mutantint
 
@@ -335,7 +340,7 @@ def predictBiomarkers(M,WTint,mutantint,fvaRxns,cutoff):
     extLvl = {}
     for rxn in fvaRxns:
         # calculate score
-        lb = [WTint[rxn][0],mutantint[rxn][0]]; ub = [WTint[rxn][1],mutantint[rxn][1]]
+        lb = [WTint[rxn.id][0],mutantint[rxn.id][0]]; ub = [WTint[rxn.id][1],mutantint[rxn.id][1]]
 
         if lb == [0,0]:
             change_lower_bound = 0
@@ -349,26 +354,26 @@ def predictBiomarkers(M,WTint,mutantint,fvaRxns,cutoff):
         score[fvaRxns.index(rxn)] = max( change_lower_bound,change_upper_bound )
 
         # determine direction of change
-        if WTint[rxn][0] == mutantint[rxn][0] and WTint[rxn][1] == mutantint[rxn][1]:
-            extLvl[rxn] = "Unchanged"
-        elif WTint[rxn][1] < mutantint[rxn][0]:
-            extLvl[rxn] = "H.C. Elevated"
-        elif WTint[rxn][0] > mutantint[rxn][1]:
-            extLvl[rxn] = "H.C. Reduced"
-        elif WTint[rxn][0] <= mutantint[rxn][0] and WTint[rxn][1] <= mutantint[rxn][1] and ( max( abs(WTint[rxn][0] - mutantint[rxn][0]), abs(WTint[rxn][1] - mutantint[rxn][1]) ) > 0 ) :
-            extLvl[rxn] = "Elevated"
-        elif WTint[rxn][0] >= mutantint[rxn][0] and WTint[rxn][1] >= mutantint[rxn][1] and ( abs(WTint[rxn][0] - mutantint[rxn][0]) > 0 or abs(WTint[rxn][1] - mutantint[rxn][1]) > 0 ) :
-            extLvl[rxn] = "Reduced"
+        if WTint[rxn.id][0] == mutantint[rxn.id][0] and WTint[rxn.id][1] == mutantint[rxn.id][1]:
+            extLvl[rxn.id] = "Unchanged"
+        elif WTint[rxn.id][1] < mutantint[rxn.id][0]:
+            extLvl[rxn.id] = "H.C. Elevated"
+        elif WTint[rxn.id][0] > mutantint[rxn.id][1]:
+            extLvl[rxn.id] = "H.C. Reduced"
+        elif WTint[rxn.id][0] <= mutantint[rxn.id][0] and WTint[rxn.id][1] <= mutantint[rxn.id][1] and ( max( abs(WTint[rxn.id][0] - mutantint[rxn.id][0]), abs(WTint[rxn.id][1] - mutantint[rxn.id][1]) ) > 0 ) :
+            extLvl[rxn.id] = "Elevated"
+        elif WTint[rxn.id][0] >= mutantint[rxn.id][0] and WTint[rxn.id][1] >= mutantint[rxn.id][1] and ( abs(WTint[rxn.id][0] - mutantint[rxn.id][0]) > 0 or abs(WTint[rxn.id][1] - mutantint[rxn.id][1]) > 0 ) :
+            extLvl[rxn.id] = "Reduced"
         else:
-            extLvl[rxn] = "Undetermined"
+            extLvl[rxn.id] = "Undetermined"
 
     # identify changed intervals indicating possible biomarkers
     if cutoff > 0:
-        biomarkerRxns = [ M.reactions.get_by_id(rxn) for rxn in fvaRxns if extLvl[rxn] !=  'Unchanged' ]
+        biomarkerRxns = [ rxn for rxn in fvaRxns if extLvl[rxn.id] !=  'Unchanged' ]
     else:
-        biomarkerRxns = [ M.reactions.get_by_id(rxn) for rxn in fvaRxns]
-    score = [ score[fvaRxns.index(rxn.id)] for rxn in biomarkerRxns ]
-    biomarkers = [ rxn.metabolites.keys() for rxn in biomarkerRxns ] # this is a list of lists
+        biomarkerRxns = [ rxn for rxn in fvaRxns]
+    score = [ score[fvaRxns.index(rxn)] for rxn in biomarkerRxns ]
+    biomarkers = [ list(rxn.metabolites.keys()) for rxn in biomarkerRxns ] # this is a list of lists
     biomarkers = [ item for sublist in biomarkers for item in sublist ]
 
     return biomarkerRxns, biomarkers, score, extLvl
@@ -382,7 +387,7 @@ def updateTable(subTable,biomarkerTable,biomarkerCount):
         currentRow = subTable.loc[subTable['ID'] == bm]
 
         # update the count
-        if bm not in biomarkerCount.keys(): biomarkerCount[bm] = 0
+        if bm not in list(biomarkerCount.keys()): biomarkerCount[bm] = 0
         if 'Elevated' in currentRow['Prediction'].tolist() or 'H.C. Elevated' in currentRow['Prediction'].tolist():
             biomarkerCount[bm] += 1
         elif 'Reduced' in currentRow['Prediction'].tolist() or 'H.C. Reduced' in currentRow['Prediction'].tolist():
@@ -390,7 +395,7 @@ def updateTable(subTable,biomarkerTable,biomarkerCount):
 
         # based on the count choose to keep or drop the biomarker
         if biomarkerCount[bm] == 0 and bm in biomarkerTable['ID'].tolist(): # equal contradictory predictions
-            print('Removed {} because it has an equal number of contradictory predictions.'.format(bm))
+            print(('Removed {} because it has an equal number of contradictory predictions.'.format(bm)))
             biomarkerTable = biomarkerTable[biomarkerTable['ID'] != bm]
         elif biomarkerCount[bm] != 0 and bm not in biomarkerTable['ID'].tolist():
             biomarkerTable = biomarkerTable.append(currentRow) # add new biomarker
