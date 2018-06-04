@@ -9,12 +9,6 @@ We will use [mybinder](http://mybinder.org/) to run [Jupyter](http://jupyter.org
 # Tips
 It is recommended that you work in pairs and **use a browser other than internet explorer!**
 
-Each time that you launch Binder you will end up in a new and independent environment. You are therefore free to modify the files in your own environment without risk to other students. However, it also means your progress will not be saved across sessions!
-
-The contents of the tutorial are organized over several notebooks. Each notebook contains explanations of key concepts and how to interact with the notebook, python and the human metabolic reconstruction. The notebooks should be self-explanatory. 
-
-Throughout you will occasionally see small assignments that are designed so that you actually interact with the software and the models.
-
 If you run into problems, ask one of the teaching assistants. 
 
 # Most important... 
@@ -22,5 +16,5 @@ Don't forget to have fun!
 
 # Reference list of tools
 - [MyBinder](http://mybinder.org/) a collection of tools for building and executing version-controlled computational environments that contain code, data, and interactive front ends
-- [CobraPy](https://github.com/opencobra/cobrapy) A package for constraint-based modeling of biological networks
+- [OpenCOBRA toolbox](https://opencobra.github.io/) Constraint-based modeling of biological networks
 - [Escher](https://escher.github.io) Build, share, and embed visualizations of biological pathways.
