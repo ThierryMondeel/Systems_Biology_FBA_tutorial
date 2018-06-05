@@ -1,1 +1,1 @@
-# Stochastics, bursting and Gillespie
+# Gillespie
