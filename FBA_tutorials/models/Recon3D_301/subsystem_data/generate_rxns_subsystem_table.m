@@ -1,8 +1,7 @@
-
 % Make a table with rxn'IDs and subsystems 
 % The info are extrapolated from Recon3DModel_301.mat original model
 
-m = readCbModel('models/Recon3D_301/Recon3DModel_301.mat');
+m = readCbModel('../Recon3DModel_301.mat');
 
 ss ={};
 
