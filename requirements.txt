@@ -2,7 +2,9 @@ lxml
 escher
 tqdm
 matplotlib
+bokeh
 scipy
 cobra
+
 
 

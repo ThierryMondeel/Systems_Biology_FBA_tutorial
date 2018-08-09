@@ -149628,7 +149628,7 @@
 "metabolites":{
 "glu_L_e":-1.0
 },
-"lower_bound":0,
+"lower_bound":-0.1,
 "upper_bound":0,
 "gene_reaction_rule":"",
 "subsystem":[
@@ -152154,7 +152154,7 @@
 "metabolites":{
 "gln_L_e":-1.0
 },
-"lower_bound":0,
+"lower_bound":-0.1,
 "upper_bound":0,
 "gene_reaction_rule":"",
 "subsystem":[
