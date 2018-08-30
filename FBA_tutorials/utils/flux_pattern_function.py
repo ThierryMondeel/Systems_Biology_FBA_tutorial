@@ -90,12 +90,12 @@ OUTPUT
                 rxns_flux.at[rxn,'fluxes'] = abs(rxns_flux.loc[rxn]['fluxes'])
 
             rxns_flux = rxns_flux.sort_values('fluxes', ascending=False)
-            print()
-            print('Flux pattern of '+ 'cell-line ' + m + ' is ready!')
-            print()
-            print(rxns_flux.head())
-            print()
-            print('--------------------------------------------------------------------------------')
+#             print()
+#             print('Flux pattern of '+ 'cell-line ' + m + ' is ready!')
+#             print()
+#             print(rxns_flux.head())
+#             print()
+#             print('--------------------------------------------------------------------------------')
 
             f_pattern[m] = rxns_flux
 
@@ -129,12 +129,12 @@ OUTPUT
                 rxns_flux.at[rxn,'fluxes'] = abs(rxns_flux.loc[rxn]['fluxes'])
 
             rxns_flux = rxns_flux.sort_values('fluxes', ascending=False)
-            print()
-            print('Flux pattern of '+ 'cell-line ' + m + ' is ready!')
-            print()
-            print(rxns_flux.head())
-            print()
-            print('_______________________________________________________________________________ ')
+#             print()
+#             print('Flux pattern of '+ 'cell-line ' + m + ' is ready!')
+#             print()
+#             print(rxns_flux.head())
+#             print()
+#             print('_______________________________________________________________________________ ')
 
             f_pattern[m] = rxns_flux
 
@@ -180,12 +180,12 @@ OUTPUT
                 if len(rxns_flux.loc[rxn]['subSystem']) == 0:
                     rxns_flux.at[rxn,'subSystem'] = ''
                     rxns_flux.at[rxn,'fluxes'] = abs(rxns_flux.loc[rxn]['fluxes'])
-            print()
-            print('Flux pattern of '+ 'cell-line ' + m + ' is ready!')
-            print()
-            print(rxns_flux.head())
-            print()
-            print('_______________________________________________________________________________ ')
+#             print()
+#             print('Flux pattern of '+ 'cell-line ' + m + ' is ready!')
+#             print()
+#             print(rxns_flux.head())
+#             print()
+#             print('_______________________________________________________________________________ ')
 
             f_pattern[m] = rxns_flux 
    
