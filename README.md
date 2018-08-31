@@ -7,7 +7,7 @@ This Github repository contains all materials related to a collection of flux ba
 We will use [mybinder](http://mybinder.org/) to run [Jupyter](http://jupyter.org/) notebooks in the cloud. By clicking on the "launch binder" button at the top of the page you will be redirected to a webpage that will generate a personal jupyter container for you. After a while the notebook server will be launched. You will see a folder with files. Open the one of the "XX_tutorial_hub" files.
 
 # Tips
-It is critical that **use a browser other than internet explorer!**
+It is critical that you **use a browser other than internet explorer!**
 
 It is recommended that you work in pairs, especially if the group is large, to reduce server stress.
 
