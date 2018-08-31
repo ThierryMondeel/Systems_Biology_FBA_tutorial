@@ -5,6 +5,5 @@ matplotlib
 bokeh
 scipy
 cobra
-
-
+colorama
 
