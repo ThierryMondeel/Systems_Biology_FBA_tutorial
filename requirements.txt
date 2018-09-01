@@ -3,7 +3,6 @@ escher
 tqdm
 matplotlib
 bokeh
-scipy
 cobra
 colorama
 
