@@ -1,4 +1,4 @@
 jupyter contrib nbextension install --user
 jupyter nbextension enable toc2
 
-jupyter labextension install @jupyterlab/toc
+# jupyter labextension install @jupyterlab/toc
