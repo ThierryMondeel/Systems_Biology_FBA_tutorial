@@ -16,5 +16,6 @@ def df_plot(target_ss, f_pattern):
             values.append(SUM)
 
         df[cell_line] = values
-    return df
+
+        return df
 
