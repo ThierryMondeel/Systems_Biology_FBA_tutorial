@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/ThierryMondeel/Systems_Biology_FBA_tutorial/master?urlpath=lab)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/ThierryMondeel/Systems_Biology_FBA_tutorial/master)
 
 # Welcome to the tutorial
 This Github repository contains all materials related to a collection of flux balance analysis practicals taught as part of the systems biology and medicine course at the VU (Free University Amsterdam) in 2016 - 2018 and at the [ECI 2018](http://www.eci2018.org). 
