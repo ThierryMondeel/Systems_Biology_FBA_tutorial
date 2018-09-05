@@ -32,15 +32,16 @@ OUTPUT
     import warnings
     from cobra.flux_analysis import flux_variability_analysis 
     from colorama import Fore
+    import pickle
     
     # load models and save store them in a dictionary
     
     # to avoid warnings!
     warnings.filterwarnings("ignore")
     
-    print()
-    print('Loading the following models:'+ str(file_list).replace('[','').replace(']',''))
-    print()
+#     print()
+#     print('Loading the following models:'+ str(file_list).replace('[','').replace(']',''))
+#     print()
     
     # Make a Model's Dictionary
     model_dict = {}
@@ -50,7 +51,10 @@ OUTPUT
         model_name = model.replace('_FPKM.json','')
         model_name = model_name.split('/')[-1]
 
-        model_dict[model_name] = cobra.io.load_json_model(model)
+        with open(model[:-5],'rb') as f: # strip off the .json
+            model_dict[model_name] = pickle.load(f)
+        
+        #model_dict[model_name] = cobra.io.load_json_model(model)
     
     print('All models are loaded')
     print()
