@@ -6,9 +6,9 @@ This Github repository contains all materials related to a collection of flux ba
 In this tutorial we will use [mybinder](http://mybinder.org/) to run [Jupyter](http://jupyter.org/) notebooks in the cloud.
 The aims of the tutorial are:
 1. To introduce you to basic programming in Python
-2. Bring your conceptual understanding of FBA into practice 
-3. Investigate the human metabolic map [Recon3D](https://www.nature.com/articles/nbt.4072)
-4. Investigate inborn errors of metabolism using Python, FBA and the human metabolic map
+2. Bring your conceptual understanding of [flux balance analysis (FBA)](https://en.wikipedia.org/wiki/Flux_balance_analysis) into practice 
+3. Apply FBA to investigate biomass and ATP production in the human metabolic map [Recon3D](https://www.nature.com/articles/nbt.4072)
+4. Investigate inborn error of metabolism [phenylketonuria (PKU)](https://ghr.nlm.nih.gov/condition/phenylketonuria) using FBA and the human metabolic map
 
 # Important notes & tips
 - It is critical that you **use a browser other than internet explorer: i.e. Google Chrome, Safari or Firefox.**
