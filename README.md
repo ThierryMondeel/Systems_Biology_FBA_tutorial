@@ -21,7 +21,7 @@ The aims of the tutorial are:
 
 - If the group size is large, it is recommended that you work in pairs to reduce server stress.
 
-- If you run into problems, ask one of the teaching assistants. 
+- If you run into problems, **ask one of the teaching assistants**. 
 
 
 # Start the tutorial
