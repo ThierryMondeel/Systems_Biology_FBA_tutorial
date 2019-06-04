@@ -27,6 +27,6 @@ The aims of the tutorial are:
 # Start the tutorial
 To start the tutorial, **click on the "launch binder" button** at the top of this page. You will be redirected to a webpage that will generate a personal jupyter container for you. 
 
-After a minute or two the notebook server will be launched. You will see a folder with files. **Open the  "VUA_course_tutorial_hub" file**. 
+After a minute or two the notebook server will be launched. You will see a folder with files. **Open the  "VU_course_tutorial_hub" file**. 
 
 
