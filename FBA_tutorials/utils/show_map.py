@@ -19,7 +19,7 @@ def show_map(sol,map_loc,color=0):
 
     if type(sol) != dict:
         try:
-            d = sol.x_dict # it is a cobrapy solution object
+            d = sol.fluxes
         except:
             print('An empty solution was passed.')
             d = {}
