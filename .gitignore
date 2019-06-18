@@ -2,7 +2,8 @@
 .tutorials/ipynb_checkpoints/
 .tutorials/predictions/
 
-.pyc
+*.pyc
+*.DS_Store
 
 # LATEX
 *.aux
